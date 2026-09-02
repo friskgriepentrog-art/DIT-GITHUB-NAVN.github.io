@@ -7,6 +7,11 @@
 <title>Dansk Styrke</title>
 
 <style>
+
+/* =========================
+   GRUNDLÆGGENDE
+========================= */
+
 * {
     margin: 0;
     padding: 0;
@@ -19,47 +24,48 @@ html {
 
 body {
     font-family: Arial, Helvetica, sans-serif;
-    background: #0a0a0a;
-    color: #fff;
+    background: #080808;
+    color: white;
 }
 
+
 /* =========================
-   LANDING PAGE
+   FORSIDE
 ========================= */
 
 #landing {
-    height: 100vh;
-    width: 100%;
     position: fixed;
     inset: 0;
     z-index: 1000;
 
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
     text-align: center;
 
     background:
-        linear-gradient(rgba(0,0,0,.58), rgba(0,0,0,.75)),
-        url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=2000&q=90")
-        center/cover;
+        linear-gradient(
+            rgba(0,0,0,.55),
+            rgba(0,0,0,.78)
+        ),
+        url("https://images.unsplash.com/photo-1523731407965-2430cd12f5e4?auto=format&fit=crop&w=2200&q=90")
+        center / cover;
 }
 
 .landing-content {
-    max-width: 900px;
     padding: 30px;
 }
 
 .landing-content h1 {
-    font-size: clamp(55px, 10vw, 140px);
+    font-size: clamp(60px, 11vw, 160px);
     font-weight: 900;
-    letter-spacing: -5px;
-    line-height: .9;
+    line-height: .82;
+    letter-spacing: -7px;
 }
 
 .landing-content p {
-    margin-top: 25px;
-    font-size: 18px;
+    margin-top: 30px;
+    font-size: 15px;
     letter-spacing: 4px;
     text-transform: uppercase;
 }
@@ -69,11 +75,11 @@ body {
     margin-top: 50px;
     padding: 20px 38px;
 
-    color: #000;
-    background: #fff;
+    background: white;
+    color: black;
 
     text-decoration: none;
-    font-size: 14px;
+    font-size: 13px;
     font-weight: bold;
     letter-spacing: 2px;
 
@@ -81,12 +87,13 @@ body {
 }
 
 .enter-button:hover {
-    background: #d9d9d9;
-    transform: translateY(-3px);
+    transform: translateY(-4px);
+    background: #ddd;
 }
 
+
 /* =========================
-   MAIN SITE
+   HJEMMESIDE
 ========================= */
 
 #site {
@@ -97,12 +104,16 @@ body {
     display: block;
 }
 
-/* HEADER */
+
+/* =========================
+   HEADER
+========================= */
 
 header {
     position: fixed;
     top: 0;
     left: 0;
+
     width: 100%;
 
     padding: 25px 35px;
@@ -112,42 +123,49 @@ header {
     align-items: center;
 
     z-index: 100;
+
     mix-blend-mode: difference;
 }
 
 .logo {
-    color: white;
     font-size: 18px;
     font-weight: 900;
     letter-spacing: 2px;
 }
 
 .menu-button {
-    color: white;
     background: none;
     border: none;
 
-    font-size: 14px;
+    color: white;
+
+    font-size: 13px;
     font-weight: bold;
     letter-spacing: 2px;
 
     cursor: pointer;
 }
 
-/* MENU */
+
+/* =========================
+   MENU
+========================= */
 
 .menu-overlay {
     position: fixed;
     inset: 0;
-    background: #111;
+
+    background: #101010;
+
     z-index: 200;
 
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
 
     opacity: 0;
     pointer-events: none;
+
     transition: .4s;
 }
 
@@ -161,20 +179,22 @@ header {
     top: 25px;
     right: 35px;
 
-    color: white;
-    background: none;
     border: none;
+    background: none;
 
-    font-size: 14px;
+    color: white;
+
+    font-size: 13px;
     font-weight: bold;
     letter-spacing: 2px;
+
     cursor: pointer;
 }
 
 .menu-links {
     display: flex;
     flex-direction: column;
-    gap: 18px;
+    gap: 15px;
     text-align: center;
 }
 
@@ -183,15 +203,17 @@ header {
     text-decoration: none;
 
     font-size: clamp(35px, 6vw, 80px);
+
     font-weight: 900;
-    letter-spacing: -2px;
+    letter-spacing: -3px;
 
     transition: .25s;
 }
 
 .menu-links a:hover {
-    opacity: .45;
+    opacity: .4;
 }
+
 
 /* =========================
    HERO
@@ -207,18 +229,17 @@ header {
     padding: 45px;
 
     background:
-        linear-gradient(transparent 40%, rgba(0,0,0,.8)),
-        url("https://images.unsplash.com/photo-1519501025264-65ba15a82390?auto=format&fit=crop&w=2200&q=90")
-        center/cover;
-}
-
-.hero-text {
-    max-width: 900px;
+        linear-gradient(
+            transparent 30%,
+            rgba(0,0,0,.85)
+        ),
+        url("https://images.unsplash.com/photo-1539650116574-75c0c6d73f6e?auto=format&fit=crop&w=2200&q=90")
+        center / cover;
 }
 
 .hero-text span {
-    font-size: 13px;
-    letter-spacing: 3px;
+    font-size: 12px;
+    letter-spacing: 4px;
     text-transform: uppercase;
 }
 
@@ -226,55 +247,195 @@ header {
     margin-top: 15px;
 
     font-size: clamp(55px, 10vw, 150px);
-    line-height: .85;
+
+    line-height: .82;
+
     letter-spacing: -6px;
+
     font-weight: 900;
 }
 
+
 /* =========================
-   SECTIONS
+   KATEGORIER
 ========================= */
 
-section {
-    padding: 140px 7vw;
+.category-section {
+    padding: 130px 7vw;
 }
 
-.section-label {
+.section-number {
     font-size: 12px;
     letter-spacing: 3px;
     text-transform: uppercase;
-    opacity: .55;
+    opacity: .5;
     margin-bottom: 30px;
 }
 
-.big-title {
-    font-size: clamp(45px, 7vw, 110px);
+.category-title {
+    font-size: clamp(45px, 7vw, 100px);
     line-height: .9;
     letter-spacing: -4px;
+    font-weight: 900;
+    max-width: 900px;
+}
+
+.category-subtitle {
+    margin-top: 30px;
+    max-width: 600px;
+    font-size: 18px;
+    line-height: 1.6;
+    opacity: .65;
+}
+
+
+/* =========================
+   KATEGORI KORT
+========================= */
+
+.categories {
+    margin-top: 80px;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    gap: 2px;
+
+    background: #333;
+}
+
+.category-card {
+    position: relative;
+
+    min-height: 330px;
+
+    padding: 35px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    overflow: hidden;
+
+    background: #111;
+
+    text-decoration: none;
+    color: white;
+
+    cursor: pointer;
+}
+
+.category-card::before {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            rgba(0,0,0,.15),
+            rgba(0,0,0,.85)
+        );
+
+    z-index: 1;
+}
+
+.category-card:hover .category-bg {
+    transform: scale(1.06);
+}
+
+.category-bg {
+    position: absolute;
+    inset: 0;
+
+    background-size: cover;
+    background-position: center;
+
+    transition: .6s;
+}
+
+.category-number,
+.category-card h3,
+.category-arrow {
+    position: relative;
+    z-index: 2;
+}
+
+.category-number {
+    font-size: 12px;
+    letter-spacing: 2px;
+    opacity: .7;
+}
+
+.category-card h3 {
+    font-size: clamp(30px, 4vw, 55px);
+    font-weight: 900;
+    letter-spacing: -2px;
+}
+
+.category-arrow {
+    font-size: 22px;
+    align-self: flex-end;
+}
+
+
+/* =========================
+   INDHOLDSSEKTIONER
+========================= */
+
+.content-section {
+    padding: 140px 7vw;
+}
+
+.big-title {
+    font-size: clamp(45px, 7vw, 105px);
+    line-height: .88;
+    letter-spacing: -5px;
     font-weight: 900;
     max-width: 1100px;
 }
 
-.text {
-    max-width: 700px;
-    font-size: 20px;
-    line-height: 1.6;
+.body-text {
     margin-top: 45px;
+
+    max-width: 700px;
+
+    font-size: 19px;
+    line-height: 1.7;
+
+    opacity: .75;
 }
 
-/* IMAGE */
+
+/* =========================
+   STORE BILLEDER
+========================= */
 
 .large-image {
     width: 100%;
-    height: 75vh;
-    min-height: 500px;
+
+    height: 70vh;
+
+    min-height: 450px;
+
     object-fit: cover;
+
     display: block;
+
     margin-top: 80px;
+
+    cursor: pointer;
+
+    transition: .4s;
 }
 
+.large-image:hover {
+    opacity: .8;
+}
+
+
 /* =========================
-   VALUES
+   VÆRDIER
 ========================= */
 
 .values {
@@ -283,13 +444,16 @@ section {
 }
 
 .value {
-    padding: 45px 0;
+    padding: 40px 0;
 
     border-bottom: 1px solid #333;
 
     display: flex;
     align-items: center;
+
     gap: 35px;
+
+    cursor: pointer;
 
     transition: .3s;
 }
@@ -299,61 +463,127 @@ section {
 }
 
 .value-number {
-    font-size: 14px;
+    width: 45px;
+    font-size: 12px;
     opacity: .5;
-    width: 50px;
 }
 
 .value h3 {
     font-size: clamp(30px, 5vw, 70px);
-    font-weight: 800;
+
+    font-weight: 900;
+
+    letter-spacing: -2px;
 }
 
+
 /* =========================
-   PROGRAM
+   PARTIPROGRAM
 ========================= */
 
 .program {
     margin-top: 80px;
+
     display: grid;
+
     grid-template-columns: 1fr 1fr;
+
     gap: 1px;
+
     background: #333;
 }
 
 .program-item {
-    background: #0a0a0a;
+    background: #080808;
+
     padding: 45px;
-    min-height: 220px;
+
+    min-height: 230px;
 }
 
 .program-item span {
-    font-size: 13px;
-    opacity: .5;
+    font-size: 12px;
+    opacity: .45;
 }
 
 .program-item h3 {
     margin-top: 30px;
-    font-size: 28px;
+    font-size: 27px;
 }
 
 .program-item p {
     margin-top: 15px;
+
     line-height: 1.6;
-    opacity: .7;
+
+    opacity: .65;
 }
+
+
+/* =========================
+   UDLÆNDINGEPOLITIK
+========================= */
+
+.immigration {
+    background: #111;
+}
+
+.immigration-image {
+    width: 100%;
+
+    height: 70vh;
+
+    object-fit: cover;
+
+    margin-top: 80px;
+
+    cursor: pointer;
+
+    transition: .4s;
+}
+
+.immigration-image:hover {
+    opacity: .8;
+}
+
+.info-box {
+    margin-top: 70px;
+
+    border-top: 1px solid #444;
+}
+
+.info-row {
+    padding: 30px 0;
+
+    border-bottom: 1px solid #444;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 30px;
+
+    font-size: 20px;
+}
+
+.info-row span:first-child {
+    font-weight: bold;
+}
+
+.info-row span:last-child {
+    opacity: .55;
+
+    text-align: right;
+}
+
 
 /* =========================
    HADERSLEV
 ========================= */
 
 .haderslev {
-    background: #f2f2f2;
-    color: #0a0a0a;
-}
-
-.haderslev .section-label {
-    opacity: .5;
+    background: #f1f1f1;
+    color: #080808;
 }
 
 .haderslev-list {
@@ -363,11 +593,132 @@ section {
 
 .haderslev-item {
     padding: 30px 0;
+
     border-bottom: 1px solid #ccc;
 
     font-size: 25px;
+
     font-weight: bold;
 }
+
+
+/* =========================
+   POPUP / INFORMATIONSBOKS
+========================= */
+
+.popup {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 500;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    padding: 25px;
+
+    background: rgba(0,0,0,.68);
+
+    backdrop-filter: blur(5px);
+
+    opacity: 0;
+
+    pointer-events: none;
+
+    transition: .35s;
+}
+
+.popup.open {
+    opacity: 1;
+
+    pointer-events: auto;
+}
+
+
+/* SELVE DEN LILLE BOKS */
+
+.popup-box {
+    position: relative;
+
+    width: min(650px, 92vw);
+
+    max-height: 80vh;
+
+    overflow-y: auto;
+
+    background: #f4f4f4;
+
+    color: #0a0a0a;
+
+    padding: 50px;
+
+    box-shadow:
+        0 30px 100px rgba(0,0,0,.5);
+
+    transform: translateY(25px) scale(.96);
+
+    transition: .35s;
+}
+
+.popup.open .popup-box {
+    transform: translateY(0) scale(1);
+}
+
+
+/* LUK KNAP */
+
+.popup-close {
+    position: absolute;
+
+    top: 18px;
+    right: 20px;
+
+    width: 35px;
+    height: 35px;
+
+    border: none;
+
+    background: none;
+
+    font-size: 20px;
+
+    cursor: pointer;
+}
+
+
+/* POPUP TEKST */
+
+.popup-number {
+    font-size: 12px;
+
+    letter-spacing: 3px;
+
+    opacity: .5;
+}
+
+.popup-box h2 {
+    margin-top: 15px;
+
+    font-size: clamp(35px, 5vw, 60px);
+
+    line-height: .9;
+
+    letter-spacing: -3px;
+
+    font-weight: 900;
+}
+
+.popup-box p {
+    margin-top: 30px;
+
+    font-size: 17px;
+
+    line-height: 1.7;
+}
+
 
 /* =========================
    FOOTER
@@ -379,7 +730,9 @@ footer {
     border-top: 1px solid #333;
 
     display: flex;
+
     justify-content: space-between;
+
     gap: 30px;
 }
 
@@ -388,12 +741,14 @@ footer strong {
 }
 
 footer span {
+    font-size: 12px;
+
     opacity: .5;
-    font-size: 13px;
 }
 
+
 /* =========================
-   MOBILE
+   MOBIL
 ========================= */
 
 @media (max-width: 700px) {
@@ -406,21 +761,17 @@ footer span {
         padding: 25px;
     }
 
-    section {
+    .category-section,
+    .content-section {
         padding: 90px 25px;
     }
 
-    .hero-text h2 {
-        letter-spacing: -3px;
+    .categories {
+        grid-template-columns: 1fr;
     }
 
-    .big-title {
-        letter-spacing: -2px;
-    }
-
-    .large-image {
-        height: 55vh;
-        min-height: 350px;
+    .category-card {
+        min-height: 280px;
     }
 
     .program {
@@ -431,11 +782,26 @@ footer span {
         padding: 30px;
     }
 
-    footer {
-        padding: 60px 25px;
+    .info-row {
         flex-direction: column;
     }
+
+    .info-row span:last-child {
+        text-align: left;
+    }
+
+    .popup-box {
+        padding: 40px 30px;
+    }
+
+    footer {
+        padding: 60px 25px;
+
+        flex-direction: column;
+    }
+
 }
+
 </style>
 </head>
 
@@ -443,19 +809,28 @@ footer span {
 <body>
 
 
-<!-- =================================
-     LANDING PAGE
-================================= -->
+<!-- ======================================
+     FORSIDE
+====================================== -->
 
 <div id="landing">
 
     <div class="landing-content">
 
-        <h1>DANSK<br>STYRKE</h1>
+        <h1>
+            DANSK<br>
+            STYRKE
+        </h1>
 
-        <p>For et stærkere og tryggere Danmark</p>
+        <p>
+            For et stærkere og tryggere Danmark
+        </p>
 
-        <a href="#" class="enter-button" onclick="enterSite()">
+        <a
+            href="#"
+            class="enter-button"
+            onclick="enterSite()"
+        >
             GÅ TIL HJEMMESIDEN →
         </a>
 
@@ -465,14 +840,12 @@ footer span {
 
 
 
-<!-- =================================
-     MAIN SITE
-================================= -->
+<!-- ======================================
+     HJEMMESIDE
+====================================== -->
 
 <div id="site">
 
-
-<!-- HEADER -->
 
 <header>
 
@@ -480,7 +853,10 @@ footer span {
         DANSK STYRKE
     </div>
 
-    <button class="menu-button" onclick="openMenu()">
+    <button
+        class="menu-button"
+        onclick="openMenu()"
+    >
         MENU
     </button>
 
@@ -488,23 +864,47 @@ footer span {
 
 
 
-<!-- MENU -->
+<!-- ======================================
+     MENU
+====================================== -->
 
-<div class="menu-overlay" id="menu">
+<div
+    class="menu-overlay"
+    id="menu"
+>
 
-    <button class="close-menu" onclick="closeMenu()">
+    <button
+        class="close-menu"
+        onclick="closeMenu()"
+    >
         LUK ✕
     </button>
 
     <nav class="menu-links">
 
-        <a href="#om-os" onclick="closeMenu()">OM OS</a>
+        <a href="#kategorier" onclick="closeMenu()">
+            KATEGORIER
+        </a>
 
-        <a href="#vaerdier" onclick="closeMenu()">VORES VÆRDIER</a>
+        <a href="#om-os" onclick="closeMenu()">
+            OM OS
+        </a>
 
-        <a href="#program" onclick="closeMenu()">PARTIPROGRAM</a>
+        <a href="#vaerdier" onclick="closeMenu()">
+            VORES VÆRDIER
+        </a>
 
-        <a href="#haderslev" onclick="closeMenu()">HADERSLEV</a>
+        <a href="#program" onclick="closeMenu()">
+            PARTIPROGRAM
+        </a>
+
+        <a href="#udlaendinge" onclick="closeMenu()">
+            UDLÆNDINGEPOLITIK
+        </a>
+
+        <a href="#haderslev" onclick="closeMenu()">
+            HADERSLEV
+        </a>
 
     </nav>
 
@@ -512,13 +912,17 @@ footer span {
 
 
 
-<!-- HERO -->
+<!-- ======================================
+     HERO
+====================================== -->
 
 <div class="hero">
 
     <div class="hero-text">
 
-        <span>Dansk Styrke</span>
+        <span>
+            DANSK STYRKE
+        </span>
 
         <h2>
             ET STÆRKERE<br>
@@ -531,11 +935,278 @@ footer span {
 
 
 
-<!-- OM OS -->
+<!-- ======================================
+     KATEGORIER
+====================================== -->
 
-<section id="om-os">
+<section
+    class="category-section"
+    id="kategorier"
+>
 
-    <div class="section-label">
+    <div class="section-number">
+        00 — Kategorier
+    </div>
+
+    <h2 class="category-title">
+        UDFORSK DANSK STYRKE.
+    </h2>
+
+    <p class="category-subtitle">
+        Klik på et område for at få mere information.
+    </p>
+
+
+    <div class="categories">
+
+
+        <!-- OM OS -->
+
+        <div
+            class="category-card"
+            onclick="openPopup(
+                '01',
+                'OM OS',
+                'Dansk Styrke fokuserer på politiske spørgsmål om dansk kultur, tryghed, ansvar, integration og kriminalitet.'
+            )"
+        >
+
+            <div
+                class="category-bg"
+                style="
+                background-image:
+                url('https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1600&q=85');
+                "
+            ></div>
+
+            <span class="category-number">01</span>
+
+            <h3>OM OS</h3>
+
+            <span class="category-arrow">→</span>
+
+        </div>
+
+
+
+        <!-- DANSK KULTUR -->
+
+        <div
+            class="category-card"
+            onclick="openPopup(
+                '02',
+                'DANSK KULTUR',
+                'Fokus på dansk kultur, danske traditioner og de kulturelle værdier, der er en del af det danske samfund.'
+            )"
+        >
+
+            <div
+                class="category-bg"
+                style="
+                background-image:
+                url('https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=1600&q=85');
+                "
+            ></div>
+
+            <span class="category-number">02</span>
+
+            <h3>DANSK KULTUR</h3>
+
+            <span class="category-arrow">→</span>
+
+        </div>
+
+
+
+        <!-- TRYGHED -->
+
+        <div
+            class="category-card"
+            onclick="openPopup(
+                '03',
+                'TRYGHED',
+                'Tryghed og sikkerhed er centrale områder. Fokus er blandt andet på kriminalitet, forebyggelse og synlighed i lokalsamfundet.'
+            )"
+        >
+
+            <div
+                class="category-bg"
+                style="
+                background-image:
+                url('https://images.unsplash.com/photo-1519501025264-65ba15a82390?auto=format&fit=crop&w=1600&q=85');
+                "
+            ></div>
+
+            <span class="category-number">03</span>
+
+            <h3>TRYGHED</h3>
+
+            <span class="category-arrow">→</span>
+
+        </div>
+
+
+
+        <!-- ANSVAR -->
+
+        <div
+            class="category-card"
+            onclick="openPopup(
+                '04',
+                'ANSVAR',
+                'Ansvar handler blandt andet om respekt for lovgivningen og de grundlæggende regler i det danske samfund.'
+            )"
+        >
+
+            <div
+                class="category-bg"
+                style="
+                background-image:
+                url('https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?auto=format&fit=crop&w=1600&q=85');
+                "
+            ></div>
+
+            <span class="category-number">04</span>
+
+            <h3>ANSVAR</h3>
+
+            <span class="category-arrow">→</span>
+
+        </div>
+
+
+
+        <!-- INTEGRATION -->
+
+        <div
+            class="category-card"
+            onclick="openPopup(
+                '05',
+                'INTEGRATION',
+                'Integration handler om deltagelse i det danske samfund og respekt for dansk lovgivning og samfundets grundlæggende regler.'
+            )"
+        >
+
+            <div
+                class="category-bg"
+                style="
+                background-image:
+                url('https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=1600&q=85');
+                "
+            ></div>
+
+            <span class="category-number">05</span>
+
+            <h3>INTEGRATION</h3>
+
+            <span class="category-arrow">→</span>
+
+        </div>
+
+
+
+        <!-- UDLÆNDINGEPOLITIK -->
+
+        <div
+            class="category-card"
+            onclick="openPopup(
+                '06',
+                'UDLÆNDINGEPOLITIK',
+                'Her kan man læse om synspunkter og forslag vedrørende udlændingepolitik, integration, lovgivning og kriminalitet.'
+            )"
+        >
+
+            <div
+                class="category-bg"
+                style="
+                background-image:
+                url('https://images.unsplash.com/photo-1541872703-74c5e44368f9?auto=format&fit=crop&w=1600&q=85');
+                "
+            ></div>
+
+            <span class="category-number">06</span>
+
+            <h3>UDLÆNDINGEPOLITIK</h3>
+
+            <span class="category-arrow">→</span>
+
+        </div>
+
+
+
+        <!-- HADERSLEV -->
+
+        <div
+            class="category-card"
+            onclick="openPopup(
+                '07',
+                'HADERSLEV',
+                'Fokus på lokale spørgsmål som synligt politi, kriminalitet og hærværk, trygge skoleområder, belysning og forebyggelse.'
+            )"
+        >
+
+            <div
+                class="category-bg"
+                style="
+                background-image:
+                url('https://images.unsplash.com/photo-1444723121867-7a241cacace9?auto=format&fit=crop&w=1600&q=85');
+                "
+            ></div>
+
+            <span class="category-number">07</span>
+
+            <h3>HADERSLEV</h3>
+
+            <span class="category-arrow">→</span>
+
+        </div>
+
+
+
+        <!-- PARTIPROGRAM -->
+
+        <div
+            class="category-card"
+            onclick="openPopup(
+                '08',
+                'PARTIPROGRAM',
+                'Partiprogrammet samler Dansk Styrkes politiske fokusområder og forslag.'
+            )"
+        >
+
+            <div
+                class="category-bg"
+                style="
+                background-image:
+                url('https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?auto=format&fit=crop&w=1600&q=85');
+                "
+            ></div>
+
+            <span class="category-number">08</span>
+
+            <h3>PARTIPROGRAM</h3>
+
+            <span class="category-arrow">→</span>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- ======================================
+     OM OS
+====================================== -->
+
+<section
+    class="content-section"
+    id="om-os"
+>
+
+    <div class="section-number">
         01 — Om os
     </div>
 
@@ -545,16 +1216,20 @@ footer span {
         OG SAMMENHOLD.
     </h2>
 
-    <p class="text">
-        Dansk Styrke arbejder for et Danmark,
-        hvor tryghed, ansvar og danske
-        traditioner står centralt.
+    <p class="body-text">
+        Dansk Styrke arbejder med politiske
+        spørgsmål om dansk kultur, tryghed,
+        ansvar, integration og kriminalitet.
     </p>
 
-    <!-- SKIFT DETTE BILLEDE HVIS DU VIL -->
     <img
         class="large-image"
-        src="https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=2200&q=90"
+        onclick="openPopup(
+            '01',
+            'OM OS',
+            'Dansk Styrke arbejder med politiske spørgsmål om dansk kultur, tryghed, ansvar, integration og kriminalitet.'
+        )"
+        src="https://images.unsplash.com/photo-1523731407965-2430cd12f5e4?auto=format&fit=crop&w=2200&q=90"
         alt="Danmark"
     >
 
@@ -562,11 +1237,16 @@ footer span {
 
 
 
-<!-- VÆRDIER -->
+<!-- ======================================
+     VÆRDIER
+====================================== -->
 
-<section id="vaerdier">
+<section
+    class="content-section"
+    id="vaerdier"
+>
 
-    <div class="section-label">
+    <div class="section-number">
         02 — Vores værdier
     </div>
 
@@ -574,27 +1254,73 @@ footer span {
         DET VI STÅR FOR.
     </h2>
 
+
     <div class="values">
 
-        <div class="value">
+
+        <div
+            class="value"
+            onclick="openPopup(
+                '01',
+                'DANSK KULTUR',
+                'Fokus på dansk kultur og danske traditioner.'
+            )"
+        >
+
             <div class="value-number">01</div>
+
             <h3>Dansk kultur</h3>
+
         </div>
 
-        <div class="value">
+
+        <div
+            class="value"
+            onclick="openPopup(
+                '02',
+                'TRYGHED',
+                'Fokus på tryghed, sikkerhed og forebyggelse af kriminalitet.'
+            )"
+        >
+
             <div class="value-number">02</div>
+
             <h3>Tryghed</h3>
+
         </div>
 
-        <div class="value">
+
+        <div
+            class="value"
+            onclick="openPopup(
+                '03',
+                'ANSVAR',
+                'Fokus på ansvar og respekt for lovgivningen.'
+            )"
+        >
+
             <div class="value-number">03</div>
+
             <h3>Ansvar</h3>
+
         </div>
 
-        <div class="value">
+
+        <div
+            class="value"
+            onclick="openPopup(
+                '04',
+                'INTEGRATION',
+                'Fokus på deltagelse i det danske samfund og respekt for danske regler.'
+            )"
+        >
+
             <div class="value-number">04</div>
+
             <h3>Integration</h3>
+
         </div>
+
 
     </div>
 
@@ -602,11 +1328,16 @@ footer span {
 
 
 
-<!-- PARTIPROGRAM -->
+<!-- ======================================
+     PARTIPROGRAM
+====================================== -->
 
-<section id="program">
+<section
+    class="content-section"
+    id="program"
+>
 
-    <div class="section-label">
+    <div class="section-number">
         03 — Partiprogram
     </div>
 
@@ -618,6 +1349,7 @@ footer span {
 
     <div class="program">
 
+
         <div class="program-item">
             <span>01</span>
             <h3>Dansk kultur</h3>
@@ -625,6 +1357,7 @@ footer span {
                 Styrke dansk kultur og danske traditioner.
             </p>
         </div>
+
 
         <div class="program-item">
             <span>02</span>
@@ -635,6 +1368,7 @@ footer span {
             </p>
         </div>
 
+
         <div class="program-item">
             <span>03</span>
             <h3>Kriminalitet</h3>
@@ -643,6 +1377,7 @@ footer span {
                 konsekvenser for alvorlig kriminalitet.
             </p>
         </div>
+
 
         <div class="program-item">
             <span>04</span>
@@ -653,22 +1388,91 @@ footer span {
             </p>
         </div>
 
+
         <div class="program-item">
             <span>05</span>
             <h3>Ansvar</h3>
             <p>
-                Personer der bor i Danmark skal respektere
-                dansk lov og samfundets grundlæggende regler.
+                Respekt for dansk lov og samfundets
+                grundlæggende regler.
             </p>
         </div>
+
 
         <div class="program-item">
             <span>06</span>
             <h3>Sikkerhed</h3>
             <p>
-                Sætte danske borgeres tryghed og sikkerhed
+                Sætte borgernes tryghed og sikkerhed
                 højt på den politiske dagsorden.
             </p>
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- ======================================
+     UDLÆNDINGEPOLITIK
+====================================== -->
+
+<section
+    class="content-section immigration"
+    id="udlaendinge"
+>
+
+    <div class="section-number">
+        05 — Udlændingepolitik
+    </div>
+
+    <h2 class="big-title">
+        UDLÆNDINGE-<br>
+        POLITIK.
+    </h2>
+
+    <p class="body-text">
+        Her kan Dansk Styrkes synspunkter og
+        politiske forslag om udlændinge,
+        integration og dansk lovgivning
+        præsenteres.
+    </p>
+
+
+    <img
+        class="immigration-image"
+        onclick="openPopup(
+            '05',
+            'UDLÆNDINGEPOLITIK',
+            'Her kan man præsentere information om udlændingepolitik, integration, lovgivning og de politiske forslag, som Dansk Styrke ønsker at arbejde med.'
+        )"
+        src="https://images.unsplash.com/photo-1541872703-74c5e44368f9?auto=format&fit=crop&w=2200&q=90"
+        alt="Politisk institution"
+    >
+
+
+    <div class="info-box">
+
+        <div class="info-row">
+            <span>Udlændingepolitik</span>
+            <span>Strammere politik inden for lovgivningen</span>
+        </div>
+
+        <div class="info-row">
+            <span>Integration</span>
+            <span>Fokus på deltagelse i det danske samfund</span>
+        </div>
+
+        <div class="info-row">
+            <span>Lov og regler</span>
+            <span>Respekt for dansk lovgivning</span>
+        </div>
+
+        <div class="info-row">
+            <span>Kriminalitet</span>
+            <span>Fokus på konsekvenser for alvorlig kriminalitet</span>
         </div>
 
     </div>
@@ -677,18 +1481,24 @@ footer span {
 
 
 
-<!-- HADERSLEV -->
+<!-- ======================================
+     HADERSLEV
+====================================== -->
 
-<section id="haderslev" class="haderslev">
+<section
+    class="content-section haderslev"
+    id="haderslev"
+>
 
-    <div class="section-label">
-        04 — Haderslev
+    <div class="section-number">
+        06 — Haderslev
     </div>
 
     <h2 class="big-title">
         ET TRYGGERE
         HADERSLEV.
     </h2>
+
 
     <div class="haderslev-list">
 
@@ -709,7 +1519,7 @@ footer span {
         </div>
 
         <div class="haderslev-item">
-            Mere forebyggelse blandt unge
+            Mere fokus på forebyggelse blandt unge
         </div>
 
         <div class="haderslev-item">
@@ -722,11 +1532,11 @@ footer span {
 
 
 
-<!-- FOOTER -->
-
 <footer>
 
-    <strong>DANSK STYRKE</strong>
+    <strong>
+        DANSK STYRKE
+    </strong>
 
     <span>
         For et stærkere og tryggere Danmark
@@ -734,12 +1544,61 @@ footer span {
 
 </footer>
 
+</div>
+
+
+
+<!-- ======================================
+     INFORMATION POPUP
+====================================== -->
+
+<div
+    class="popup"
+    id="popup"
+    onclick="closePopupOutside(event)"
+>
+
+    <div
+        class="popup-box"
+        onclick="event.stopPropagation()"
+    >
+
+        <button
+            class="popup-close"
+            onclick="closePopup()"
+        >
+            ✕
+        </button>
+
+        <div
+            class="popup-number"
+            id="popup-number"
+        >
+            01
+        </div>
+
+        <h2 id="popup-title">
+            INFORMATION
+        </h2>
+
+        <p id="popup-text">
+            Information.
+        </p>
+
+    </div>
 
 </div>
 
 
 
+<!-- ======================================
+     JAVASCRIPT
+====================================== -->
+
 <script>
+
+
+/* GÅ IND PÅ HJEMMESIDEN */
 
 function enterSite() {
 
@@ -748,21 +1607,90 @@ function enterSite() {
     document.getElementById("site").classList.add("active");
 
     window.scrollTo(0, 0);
+
 }
 
+
+/* ÅBN MENU */
 
 function openMenu() {
 
-    document.getElementById("menu").classList.add("open");
+    document
+        .getElementById("menu")
+        .classList.add("open");
 
 }
 
+
+/* LUK MENU */
 
 function closeMenu() {
 
-    document.getElementById("menu").classList.remove("open");
+    document
+        .getElementById("menu")
+        .classList.remove("open");
 
 }
+
+
+/* ÅBN INFORMATIONSBOKS */
+
+function openPopup(number, title, text) {
+
+    document.getElementById("popup-number").innerText = number;
+
+    document.getElementById("popup-title").innerText = title;
+
+    document.getElementById("popup-text").innerText = text;
+
+    document
+        .getElementById("popup")
+        .classList.add("open");
+
+}
+
+
+/* LUK INFORMATIONSBOKS */
+
+function closePopup() {
+
+    document
+        .getElementById("popup")
+        .classList.remove("open");
+
+}
+
+
+/* LUK HVIS MAN KLIKKER PÅ BAGGRUNDEN */
+
+function closePopupOutside(event) {
+
+    if (
+        event.target ===
+        document.getElementById("popup")
+    ) {
+
+        closePopup();
+
+    }
+
+}
+
+
+/* ESCAPE LUKKER POPUP */
+
+document.addEventListener(
+    "keydown",
+    function(event) {
+
+        if (event.key === "Escape") {
+
+            closePopup();
+
+        }
+
+    }
+);
 
 </script>
 
