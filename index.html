@@ -1,10 +1,11 @@
+```html
 <!DOCTYPE html>
 <html lang="da">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Min Hjemmeside</title>
+    <title>Dansk Styrke</title>
 
     <style>
         * {
@@ -33,7 +34,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background: rgba(5, 5, 5, 0.85);
+            background: rgba(5, 5, 5, 0.88);
             backdrop-filter: blur(12px);
             z-index: 1000;
             border-bottom: 1px solid #222;
@@ -43,6 +44,10 @@
             font-size: 24px;
             font-weight: bold;
             letter-spacing: 2px;
+        }
+
+        .logo span {
+            color: #888;
         }
 
         nav a {
@@ -64,35 +69,42 @@
             justify-content: center;
             text-align: center;
             padding: 120px 20px 80px;
+
             background:
-                radial-gradient(circle at center, #1b1b1b 0%, #050505 60%);
+                radial-gradient(
+                    circle at center,
+                    #202020 0%,
+                    #0b0b0b 35%,
+                    #050505 70%
+                );
         }
 
         .hero-content {
-            max-width: 850px;
+            max-width: 900px;
         }
 
         .hero h1 {
-            font-size: clamp(50px, 8vw, 100px);
-            line-height: 0.95;
-            margin-bottom: 25px;
-            letter-spacing: -4px;
+            font-size: clamp(55px, 9vw, 110px);
+            line-height: 0.9;
+            margin-bottom: 30px;
+            letter-spacing: -5px;
         }
 
         .hero h1 span {
-            color: #888;
+            color: #777;
         }
 
         .hero p {
             color: #aaa;
             font-size: 19px;
             line-height: 1.7;
-            margin-bottom: 35px;
+            max-width: 700px;
+            margin: 0 auto 35px;
         }
 
         .button {
             display: inline-block;
-            padding: 15px 30px;
+            padding: 15px 32px;
             border: 1px solid #555;
             border-radius: 50px;
             color: white;
@@ -106,9 +118,9 @@
             transform: translateY(-3px);
         }
 
-        /* BILLEDER */
+        /* GALLERI */
         .gallery {
-            padding: 100px 7%;
+            padding: 120px 7%;
             background: #080808;
         }
 
@@ -118,7 +130,7 @@
         }
 
         .section-title h2 {
-            font-size: 45px;
+            font-size: 48px;
             margin-bottom: 15px;
         }
 
@@ -140,21 +152,23 @@
             overflow: hidden;
             border-radius: 18px;
             background: #111;
-            border: 1px solid #222;
-            min-height: 450px;
+            border: 1px solid #252525;
+            min-height: 480px;
         }
 
         .image-card img {
             width: 100%;
             height: 100%;
-            min-height: 450px;
+            min-height: 480px;
             object-fit: cover;
             display: block;
-            transition: transform 0.6s ease;
+            filter: grayscale(100%);
+            transition: 0.6s ease;
         }
 
         .image-card:hover img {
-            transform: scale(1.08);
+            transform: scale(1.06);
+            filter: grayscale(0%);
         }
 
         .image-overlay {
@@ -162,16 +176,17 @@
             bottom: 0;
             left: 0;
             width: 100%;
-            padding: 30px 25px;
+            padding: 35px 25px 25px;
+
             background: linear-gradient(
                 transparent,
-                rgba(0,0,0,0.9)
+                rgba(0,0,0,0.95)
             );
         }
 
         .image-overlay h3 {
-            font-size: 22px;
-            margin-bottom: 5px;
+            font-size: 23px;
+            margin-bottom: 7px;
         }
 
         .image-overlay p {
@@ -192,7 +207,7 @@
         }
 
         .about h2 {
-            font-size: 45px;
+            font-size: 48px;
             margin-bottom: 25px;
         }
 
@@ -202,13 +217,58 @@
             line-height: 1.8;
         }
 
+        /* INFORMATION */
+        .information {
+            padding: 110px 7%;
+            background: #080808;
+        }
+
+        .information-content {
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .information h2 {
+            text-align: center;
+            font-size: 45px;
+            margin-bottom: 50px;
+        }
+
+        .info-box {
+            background: #101010;
+            border: 1px solid #242424;
+            border-radius: 18px;
+            padding: 30px;
+            margin-bottom: 20px;
+            transition: 0.3s;
+        }
+
+        .info-box:hover {
+            border-color: #444;
+            transform: translateY(-3px);
+        }
+
+        .info-box h3 {
+            font-size: 22px;
+            margin-bottom: 12px;
+        }
+
+        .info-box p {
+            color: #999;
+            line-height: 1.7;
+        }
+
         /* FOOTER */
         footer {
-            padding: 40px 20px;
+            padding: 45px 20px;
             text-align: center;
             background: #000;
             border-top: 1px solid #222;
             color: #666;
+        }
+
+        footer strong {
+            color: #aaa;
         }
 
         /* MOBIL */
@@ -220,11 +280,11 @@
 
             nav a {
                 margin-left: 12px;
-                font-size: 14px;
+                font-size: 13px;
             }
 
             .hero h1 {
-                letter-spacing: -2px;
+                letter-spacing: -3px;
             }
 
             .image-grid {
@@ -237,7 +297,8 @@
             }
 
             .gallery,
-            .about {
+            .about,
+            .information {
                 padding-left: 5%;
                 padding-right: 5%;
             }
@@ -249,13 +310,18 @@
 
     <!-- NAVIGATION -->
     <nav>
-        <div class="logo">MY SITE</div>
+
+        <div class="logo">
+            DANSK <span>STYRKE</span>
+        </div>
 
         <div>
             <a href="#home">Forside</a>
             <a href="#billeder">Billeder</a>
             <a href="#om">Om</a>
+            <a href="#information">Information</a>
         </div>
+
     </nav>
 
 
@@ -265,17 +331,17 @@
         <div class="hero-content">
 
             <h1>
-                Velkommen<br>
-                <span>til min hjemmeside.</span>
+                DANSK<br>
+                <span>STYRKE</span>
             </h1>
 
             <p>
-                En simpel, moderne og stilren hjemmeside
-                med fokus på billeder og et clean design.
+                En hjemmeside med information om dansk politik,
+                samfund og aktuelle politiske emner.
             </p>
 
             <a href="#billeder" class="button">
-                Se billeder ↓
+                Udforsk siden ↓
             </a>
 
         </div>
@@ -291,7 +357,8 @@
             <h2>Galleri</h2>
 
             <p>
-                Her kan du se mine billeder.
+                Billeder relateret til nogle af de politiske emner,
+                der diskuteres i Danmark.
             </p>
 
         </div>
@@ -302,11 +369,14 @@
             <!-- BILLEDE 1 -->
             <div class="image-card">
 
-                <img src="billede1.png" alt="Billede 1">
+                <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Rasmus_Paludan_by_Christian_Ursilva.jpg/682px-Rasmus_Paludan_by_Christian_Ursilva.jpg"
+                    alt="Rasmus Paludan"
+                >
 
                 <div class="image-overlay">
-                    <h3>01</h3>
-                    <p>Galleri</p>
+                    <h3>01 — Rasmus Paludan</h3>
+                    <p>Dansk politiker og advokat</p>
                 </div>
 
             </div>
@@ -315,11 +385,14 @@
             <!-- BILLEDE 2 -->
             <div class="image-card">
 
-                <img src="billede2.png" alt="Billede 2">
+                <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Rasmus_Paludan_i_Sollentuna_2022-08-20.jpg/1024px-Rasmus_Paludan_i_Sollentuna_2022-08-20.jpg"
+                    alt="Rasmus Paludan i Sollentuna"
+                >
 
                 <div class="image-overlay">
-                    <h3>02</h3>
-                    <p>Galleri</p>
+                    <h3>02 — Politik</h3>
+                    <p>Politisk debat i Danmark og Norden</p>
                 </div>
 
             </div>
@@ -328,11 +401,25 @@
             <!-- BILLEDE 3 -->
             <div class="image-card">
 
-                <img src="billede3.png" alt="Billede 3">
+                <div
+                    style="
+                        width:100%;
+                        height:100%;
+                        min-height:480px;
+                        background:
+                        linear-gradient(
+                            rgba(0,0,0,.25),
+                            rgba(0,0,0,.65)
+                        ),
+                        url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&q=80');
+                        background-size:cover;
+                        background-position:center;
+                    "
+                ></div>
 
                 <div class="image-overlay">
-                    <h3>03</h3>
-                    <p>Galleri</p>
+                    <h3>03 — Danmark</h3>
+                    <p>Det danske samfund og dets udvikling</p>
                 </div>
 
             </div>
@@ -347,13 +434,68 @@
 
         <div class="about-content">
 
-            <h2>Om siden</h2>
+            <h2>Om Dansk Styrke</h2>
 
             <p>
-                Dette er min hjemmeside, hvor jeg kan vise
-                forskellige billeder og projekter frem.
-                Designet er holdt simpelt, mørkt og moderne.
+                Dansk Styrke er en hjemmeside, der samler
+                information og perspektiver om dansk politik
+                og samfund. Siden er designet med fokus på
+                et enkelt, mørkt og moderne udtryk.
             </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- INFORMATION -->
+    <section class="information" id="information">
+
+        <div class="information-content">
+
+            <h2>Information</h2>
+
+            <div class="info-box">
+
+                <h3>Dansk politik</h3>
+
+                <p>
+                    Dansk politik består af mange forskellige
+                    partier og politiske retninger. Debatten
+                    om blandt andet udlændingepolitik,
+                    integration og national identitet fylder
+                    i den offentlige debat.
+                </p>
+
+            </div>
+
+
+            <div class="info-box">
+
+                <h3>Udrejsecentre</h3>
+
+                <p>
+                    Udrejsecentre er en del af det danske system
+                    for personer, der har fået afslag på ophold
+                    og skal forlade Danmark. Området er et
+                    politisk omdiskuteret emne.
+                </p>
+
+            </div>
+
+
+            <div class="info-box">
+
+                <h3>Politisk debat</h3>
+
+                <p>
+                    Dansk Styrke kan bruges som en platform til
+                    at præsentere politiske synspunkter og
+                    information. Forskellige perspektiver kan
+                    indgå i debatten om Danmarks fremtid.
+                </p>
+
+            </div>
 
         </div>
 
@@ -363,9 +505,13 @@
     <!-- FOOTER -->
     <footer>
 
-        © 2026 Min hjemmeside
+        © 2026 <strong>Dansk Styrke</strong>
 
     </footer>
 
 </body>
 </html>
+```
+
+Billedet af Rasmus Paludan ovenfor er fra Wikimedia Commons og er angivet som CC BY-SA 4.0, så det har licenskrav ved genbrug.
+
