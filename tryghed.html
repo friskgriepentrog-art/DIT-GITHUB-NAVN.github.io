@@ -1,1 +1,272 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Tryghed | Dansk Styrke</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #080808;
+    color: white;
+    line-height: 1.6;
+}
+
+nav {
+    height: 75px;
+    padding: 0 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    background: rgba(8,8,8,.95);
+    border-bottom: 1px solid #222;
+    z-index: 10;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.logo span {
+    color: #c40000;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+}
+
+.hero {
+    min-height: 75vh;
+    padding: 150px 8%;
+    display: flex;
+    align-items: center;
+    background:
+    linear-gradient(rgba(0,0,0,.65),rgba(0,0,0,.9)),
+    url("https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=2000&q=80")
+    center/cover;
+}
+
+.small {
+    color: #c40000;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+h1 {
+    font-size: clamp(55px,9vw,110px);
+    line-height: .9;
+    text-transform: uppercase;
+    margin: 20px 0;
+}
+
+.hero p {
+    color: #ccc;
+    font-size: 20px;
+    max-width: 650px;
+}
+
+section {
+    padding: 100px 8%;
+}
+
+.content {
+    max-width: 1100px;
+    margin: auto;
+}
+
+.intro {
+    font-size: 27px;
+    color: #ddd;
+    margin-bottom: 70px;
+}
+
+h2 {
+    font-size: 48px;
+    line-height: 1.1;
+    margin-bottom: 25px;
+}
+
+.text {
+    max-width: 850px;
+    color: #aaa;
+    font-size: 18px;
+    margin-bottom: 70px;
+}
+
+.quote {
+    background: #111;
+    border-left: 4px solid #c40000;
+    padding: 35px;
+    margin: 70px 0;
+}
+
+.quote p {
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.facts {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 20px;
+}
+
+.fact {
+    background: #111;
+    border: 1px solid #252525;
+    padding: 35px;
+}
+
+.number {
+    color: #c40000;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.fact h3 {
+    margin: 10px 0;
+}
+
+.fact p {
+    color: #999;
+}
+
+.back {
+    display: inline-block;
+    margin-top: 60px;
+    padding: 14px 25px;
+    border: 1px solid #444;
+    color: white;
+    text-decoration: none;
+}
+
+.back:hover {
+    background: #c40000;
+}
+
+footer {
+    border-top: 1px solid #222;
+    text-align: center;
+    padding: 50px;
+    color: #666;
+}
+
+@media(max-width:800px) {
+    .facts {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+<div class="logo">DANSK <span>STYRKE</span></div>
+<a href="index.html">Tilbage til forsiden</a>
+</nav>
+
+<header class="hero">
+<div>
+
+<div class="small">Vores værdier · 02</div>
+
+<h1>Tryghed</h1>
+
+<p>
+Alle skal kunne føle sig trygge i deres hverdag,
+i deres lokalområde og i det offentlige rum.
+</p>
+
+</div>
+</header>
+
+<section>
+<div class="content">
+
+<p class="intro">
+Tryghed handler om at kunne færdes frit og føle sig sikker
+i det samfund, man er en del af.
+</p>
+
+<div class="quote">
+<p>
+"Et trygt samfund er et samfund, hvor mennesker kan leve deres hverdag uden unødig frygt."
+</p>
+</div>
+
+<h2>Et trygt<br>Danmark</h2>
+
+<p class="text">
+Vi mener, at tryghed skal være en vigtig del af et velfungerende
+samfund. Det gælder både i byerne, på landet, omkring skoler
+og i vores boligområder.
+</p>
+
+<h2>Forebyggelse</h2>
+
+<p class="text">
+Tryghed handler ikke kun om reaktion på kriminalitet.
+Forebyggelse, gode fællesskaber og synlige voksne kan også
+spille en vigtig rolle i arbejdet med at skabe trygge områder.
+</p>
+
+<h2>Vores mål</h2>
+
+<p class="text">
+Vi ønsker større fokus på tryghed i lokalsamfund,
+bedre belysning på utrygge steder og en indsats,
+der både forebygger og reagerer på kriminalitet.
+</p>
+
+<div class="facts">
+
+<div class="fact">
+<div class="number">01</div>
+<h3>Trygge områder</h3>
+<p>Fokus på steder hvor mennesker færdes til daglig.</p>
+</div>
+
+<div class="fact">
+<div class="number">02</div>
+<h3>Forebyggelse</h3>
+<p>Problemer skal så vidt muligt forebygges, før de vokser.</p>
+</div>
+
+<div class="fact">
+<div class="number">03</div>
+<h3>Synlighed</h3>
+<p>Synlige myndigheder kan være en del af indsatsen for tryghed.</p>
+</div>
+
+</div>
+
+<a class="back" href="index.html#vaerdier">
+← Tilbage til vores værdier
+</a>
+
+</div>
+</section>
+
+<footer>
+© 2026 Dansk Styrke
+</footer>
+
+</body>
+</html>
 
