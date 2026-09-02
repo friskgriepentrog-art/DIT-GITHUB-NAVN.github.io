@@ -1,947 +1,771 @@
-<title>DANSK STYRKE NY VERSION</title>
- 
-<style> 
-   * { 
-       margin: 0; 
-       padding: 0; 
-       box-sizing: border-box; 
-   } 
- 
-   html { 
-       scroll-behavior: smooth; 
-   } 
- 
-   body { 
-       font-family: Arial, Helvetica, sans-serif; 
-       background: #080808; 
-       color: white; 
-   } 
- 
-   /* ========================= 
-      NAVIGATION 
-   ========================= */ 
- 
-   .navbar { 
-       position: fixed; 
-       top: 0; 
-       left: 0; 
-       width: 100%; 
-       z-index: 1000; 
- 
-       display: flex; 
-       justify-content: space-between; 
-       align-items: center; 
- 
-       padding: 22px 5%; 
- 
-       background: rgba(8, 8, 8, 0.75); 
-       backdrop-filter: blur(12px); 
- 
-       border-bottom: 1px solid rgba(255,255,255,0.08); 
-   } 
- 
-   .logo { 
-       font-size: 22px; 
-       font-weight: 900; 
-       letter-spacing: 2px; 
-   } 
- 
-   .logo span { 
-       color: #b00000; 
-   } 
- 
-   .menu { 
-       display: flex; 
-       gap: 35px; 
-       list-style: none; 
-   } 
- 
-   .menu a { 
-       color: white; 
-       text-decoration: none; 
-       font-size: 14px; 
-       font-weight: bold; 
-       transition: 0.3s; 
-   } 
- 
-   .menu a:hover { 
-       color: #c00000; 
-   } 
- 
- 
-   /* ========================= 
-      HERO 
-   ========================= */ 
- 
-   .hero { 
-       height: 100vh; 
-       min-height: 650px; 
- 
-       display: flex; 
-       align-items: flex-end; 
- 
-       padding: 0 5% 9%; 
- 
-       position: relative; 
- 
-       background: 
-           linear-gradient( 
-               to top, 
-               #080808 0%, 
-               rgba(8,8,8,0.25) 55%, 
-               rgba(8,8,8,0.15) 100% 
-           ); 
- 
-       overflow: hidden; 
-   } 
- 
-   /* Midlertidigt område til første billede */ 
- 
-   .hero-image { 
-       position: absolute; 
-       inset: 0; 
-       z-index: -1; 
- 
-       background: 
-           linear-gradient( 
-               135deg, 
-               #151515, 
-               #050505 
-           ); 
-   } 
- 
-   .hero-image::after { 
-       content: "DIT FØRSTE BILLEDE"; 
-       position: absolute; 
- 
-       top: 50%; 
-       left: 50%; 
- 
-       transform: translate(-50%, -50%); 
- 
-       color: #333; 
-       font-size: 18px; 
-       letter-spacing: 3px; 
-   } 
- 
-   .hero-content { 
-       max-width: 850px; 
-   } 
- 
-   .hero-small { 
-       color: #ccc; 
-       font-size: 14px; 
-       font-weight: bold; 
-       letter-spacing: 3px; 
-       margin-bottom: 20px; 
-   } 
- 
-   .hero h1 { 
-       font-size: clamp(60px, 10vw, 130px); 
-       line-height: 0.85; 
-       letter-spacing: -6px; 
-       font-weight: 900; 
-       margin-bottom: 30px; 
-   } 
- 
-   .hero h1 span { 
-       color: #b00000; 
-   } 
- 
-   .hero-text { 
-       max-width: 600px; 
-       color: #ccc; 
-       font-size: 19px; 
-       line-height: 1.6; 
-       margin-bottom: 35px; 
-   } 
- 
-   .button { 
-       display: inline-block; 
- 
-       padding: 15px 28px; 
- 
-       background: white; 
-       color: black; 
- 
-       text-decoration: none; 
-       font-weight: bold; 
-       font-size: 14px; 
- 
-       transition: 0.3s; 
-   } 
- 
-   .button:hover { 
-       background: #b00000; 
-       color: white; 
-   } 
- 
- 
-   /* ========================= 
-      INTRO 
-   ========================= */ 
- 
-   .intro { 
-       padding: 130px 5%; 
-       background: #080808; 
-   } 
- 
-   .intro-grid { 
-       display: grid; 
-       grid-template-columns: 1fr 1fr; 
-       gap: 80px; 
-       align-items: center; 
-       max-width: 1400px; 
-       margin: auto; 
-   } 
- 
-   .intro-title { 
-       font-size: clamp(45px, 6vw, 80px); 
-       line-height: 0.95; 
-       letter-spacing: -3px; 
-   } 
- 
-   .intro-title span { 
-       color: #b00000; 
-   } 
- 
-   .intro-text { 
-       color: #999; 
-       font-size: 18px; 
-       line-height: 1.8; 
-   } 
- 
- 
-   /* ========================= 
-      STORT BILLEDE 
-   ========================= */ 
- 
-   .visual-section { 
-       width: 100%; 
-       height: 650px; 
- 
-       position: relative; 
- 
-       background: #111; 
-       overflow: hidden; 
-   } 
- 
-   .visual-placeholder { 
-       width: 100%; 
-       height: 100%; 
- 
-       display: flex; 
-       justify-content: center; 
-       align-items: center; 
- 
-       background: 
-           linear-gradient( 
-               135deg, 
-               #161616, 
-               #090909 
-           ); 
- 
-       color: #333; 
-       font-size: 18px; 
-       letter-spacing: 3px; 
-   } 
- 
- 
-   /* ========================= 
-      VÆRDIER 
-   ========================= */ 
- 
-   .values { 
-       padding: 130px 5%; 
-       background: #f2f2f2; 
-       color: #080808; 
-   } 
- 
-   .section-header { 
-       max-width: 1400px; 
-       margin: auto; 
-       margin-bottom: 60px; 
-   } 
- 
-   .section-header small { 
-       color: #b00000; 
-       font-weight: bold; 
-       letter-spacing: 3px; 
-   } 
- 
-   .section-header h2 { 
-       font-size: clamp(45px, 6vw, 80px); 
-       line-height: 1; 
-       letter-spacing: -3px; 
-       margin-top: 15px; 
-   } 
- 
-   .values-grid { 
-       max-width: 1400px; 
-       margin: auto; 
- 
-       display: grid; 
-       grid-template-columns: repeat(4, 1fr); 
-       gap: 2px; 
-   } 
- 
-   .value { 
-       background: #e5e5e5; 
-       padding: 45px 30px; 
-       min-height: 280px; 
- 
-       transition: 0.3s; 
-   } 
- 
-   .value:hover { 
-       background: #d5d5d5; 
-   } 
- 
-   .value-number { 
-       font-size: 13px; 
-       color: #888; 
-       margin-bottom: 40px; 
-   } 
- 
-   .value h3 { 
-       font-size: 27px; 
-       margin-bottom: 15px; 
-   } 
- 
-   .value p { 
-       color: #666; 
-       line-height: 1.7; 
-   } 
- 
- 
-   /* ========================= 
-      PARTIPROGRAM 
-   ========================= */ 
- 
-   .program { 
-       padding: 140px 5%; 
-       background: #080808; 
-   } 
- 
-   .program-inner { 
-       max-width: 1400px; 
-       margin: auto; 
-   } 
- 
-   .program-header { 
-       display: flex; 
-       justify-content: space-between; 
-       align-items: flex-end; 
- 
-       margin-bottom: 70px; 
-   } 
- 
-   .program-header h2 { 
-       font-size: clamp(45px, 6vw, 80px); 
-       line-height: 0.95; 
-       letter-spacing: -3px; 
-   } 
- 
-   .program-header h2 span { 
-       color: #b00000; 
-   } 
- 
-   .program-header p { 
-       max-width: 400px; 
-       color: #777; 
-       line-height: 1.7; 
-   } 
- 
-   .program-list { 
-       border-top: 1px solid #292929; 
-   } 
- 
-   .program-row { 
-       display: grid; 
-       grid-template-columns: 80px 1fr; 
- 
-       padding: 28px 0; 
- 
-       border-bottom: 1px solid #292929; 
- 
-       transition: 0.3s; 
-   } 
- 
-   .program-row:hover { 
-       padding-left: 15px; 
-   } 
- 
-   .program-number { 
-       color: #b00000; 
-       font-weight: bold; 
-   } 
- 
-   .program-row p { 
-       color: #ddd; 
-       font-size: 18px; 
-   } 
- 
- 
-   /* ========================= 
-      HADERSLEV 
-   ========================= */ 
- 
-   .local { 
-       padding: 130px 5%; 
-       background: #111; 
-   } 
- 
-   .local-grid { 
-       max-width: 1400px; 
-       margin: auto; 
- 
-       display: grid; 
-       grid-template-columns: 1fr 1fr; 
-       gap: 70px; 
-       align-items: center; 
-   } 
- 
-   .local h2 { 
-       font-size: clamp(50px, 7vw, 95px); 
-       line-height: 0.9; 
-       letter-spacing: -5px; 
-       margin-bottom: 30px; 
-   } 
- 
-   .local h2 span { 
-       color: #b00000; 
-   } 
- 
-   .local-description { 
-       color: #999; 
-       font-size: 18px; 
-       line-height: 1.8; 
-       max-width: 550px; 
-       margin-bottom: 35px; 
-   } 
- 
-   .local-list { 
-       list-style: none; 
-   } 
- 
-   .local-list li { 
-       padding: 15px 0; 
-       border-bottom: 1px solid #292929; 
-       color: #ddd; 
-   } 
- 
-   .local-list li::before { 
-       content: "—"; 
-       color: #b00000; 
-       margin-right: 12px; 
-   } 
- 
-   .local-image { 
-       height: 600px; 
- 
-       background: 
-           linear-gradient( 
-               135deg, 
-               #1c1c1c, 
-               #090909 
-           ); 
- 
-       display: flex; 
-       align-items: center; 
-       justify-content: center; 
- 
-       color: #333; 
-       letter-spacing: 3px; 
-   } 
- 
- 
-   /* ========================= 
-      MÅL 
-   ========================= */ 
- 
-   .goals { 
-       padding: 170px 5%; 
-       background: #b00000; 
-       text-align: center; 
-   } 
- 
-   .goals h2 { 
-       font-size: clamp(50px, 8vw, 110px); 
-       line-height: 0.9; 
-       letter-spacing: -5px; 
-       margin-bottom: 35px; 
-   } 
- 
-   .goals p { 
-       max-width: 700px; 
-       margin: auto; 
-       font-size: 20px; 
-       line-height: 1.7; 
-   } 
- 
- 
-   /* ========================= 
-      FOOTER 
-   ========================= */ 
- 
-   footer { 
-       padding: 70px 5%; 
-       background: #050505; 
-   } 
- 
-   .footer-inner { 
-       max-width: 1400px; 
-       margin: auto; 
- 
-       display: flex; 
-       justify-content: space-between; 
-       align-items: center; 
-   } 
- 
-   .footer-logo { 
-       font-size: 25px; 
-       font-weight: 900; 
-       letter-spacing: 2px; 
-   } 
- 
-   .footer-logo span { 
-       color: #b00000; 
-   } 
- 
-   footer p { 
-       color: #555; 
-       font-size: 14px; 
-   } 
- 
- 
-   /* ========================= 
-      MOBIL 
-   ========================= */ 
- 
-   @media (max-width: 900px) { 
- 
-       .menu { 
-           gap: 15px; 
-       } 
- 
-       .menu a { 
-           font-size: 12px; 
-       } 
- 
-       .intro-grid, 
-       .local-grid { 
-           grid-template-columns: 1fr; 
-           gap: 50px; 
-       } 
- 
-       .values-grid { 
-           grid-template-columns: 1fr 1fr; 
-       } 
- 
-       .program-header { 
-           display: block; 
-       } 
- 
-       .program-header p { 
-           margin-top: 25px; 
-       } 
- 
-       .local-image { 
-           height: 450px; 
-       } 
-   } 
- 
- 
-   @media (max-width: 600px) { 
- 
-       .navbar { 
-           padding: 18px 5%; 
-       } 
- 
-       .logo { 
-           font-size: 17px; 
-       } 
- 
-       .menu { 
-           gap: 10px; 
-       } 
- 
-       .menu a { 
-           font-size: 10px; 
-       } 
- 
-       .hero { 
-           padding: 0 5% 12%; 
-       } 
- 
-       .hero h1 { 
-           font-size: 62px; 
-           letter-spacing: -3px; 
-       } 
- 
-       .hero-text { 
-           font-size: 16px; 
-       } 
- 
-       .values-grid { 
-           grid-template-columns: 1fr; 
-       } 
- 
-       .visual-section { 
-           height: 450px; 
-       } 
- 
-       .program-row { 
-           grid-template-columns: 50px 1fr; 
-       } 
- 
-       .program-row p { 
-           font-size: 16px; 
-       } 
- 
-       .footer-inner { 
-           display: block; 
-       } 
- 
-       footer p { 
-           margin-top: 15px; 
-       } 
-   } 
- 
-</style> 
-<!-- NAVIGATION --> 
- 
-<nav class="navbar"> 
- 
-   <div class="logo"> 
-       DANSK <span>STYRKE</span> 
-   </div> 
- 
-   <ul class="menu"> 
-       <li><a href="#om-os">OM OS</a></li> 
-       <li><a href="#vaerdier">VÆRDIER</a></li> 
-       <li><a href="#program">PROGRAM</a></li> 
-       <li><a href="#haderslev">HADERSLEV</a></li> 
-   </ul> 
- 
-</nav> 
- 
- 
-<!-- HERO --> 
- 
-<header class="hero"> 
- 
-   <div class="hero-image"></div> 
- 
-   <div class="hero-content"> 
- 
-       <div class="hero-small"> 
-           DANSK STYRKE 
-       </div> 
- 
-       <h1> 
-           ET STÆRKERE<br> 
-           <span>DANMARK.</span> 
-       </h1> 
- 
-       <p class="hero-text"> 
-           For et stærkere, tryggere og mere samlet Danmark. 
-           Vi ønsker at sætte tryghed, ansvar, dansk kultur 
-           og fællesskab i centrum. 
-       </p> 
- 
-       <a href="#om-os" class="button"> 
-           UDFORSK DANSK STYRKE 
-       </a> 
- 
-   </div> 
- 
-</header> 
- 
- 
-<!-- INTRO --> 
- 
-<section class="intro" id="om-os"> 
- 
-   <div class="intro-grid"> 
- 
-       <h2 class="intro-title"> 
-           DANMARK<br> 
-           <span>FØRST.</span> 
-       </h2> 
- 
-       <div class="intro-text"> 
- 
-           <p> 
-               Dansk Styrke er et politisk projekt, der ønsker at 
-               sætte Danmark, dansk kultur, tryghed og ansvar 
-               i centrum. 
-           </p> 
- 
-           <br> 
- 
-           <p> 
-               Vi mener, at Danmark skal have klare regler, og at 
-               alle, der bor i Danmark, skal respektere vores love 
-               og samfund. 
-           </p> 
- 
-       </div> 
- 
-   </div> 
- 
-</section> 
- 
- 
-<!-- STORT BILLEDE --> 
- 
-<section class="visual-section"> 
- 
-   <div class="visual-placeholder"> 
-       DIT BILLEDE KOMMER HER 
-   </div> 
- 
-</section> 
- 
- 
-<!-- VÆRDIER --> 
- 
-<section class="values" id="vaerdier"> 
- 
-   <div class="section-header"> 
- 
-       <small>VORES GRUNDLAG</small> 
- 
-       <h2> 
-           VORES<br> 
-           VÆRDIER 
-       </h2> 
- 
-   </div> 
- 
- 
-   <div class="values-grid"> 
- 
- 
-       <div class="value"> 
- 
-           <div class="value-number">01</div> 
- 
-           <h3>Dansk kultur</h3> 
- 
-           <p> 
-               Vi ønsker at bevare og styrke dansk kultur, 
-               historie, traditioner og fællesskab. 
-           </p> 
- 
-       </div> 
- 
- 
-       <div class="value"> 
- 
-           <div class="value-number">02</div> 
- 
-           <h3>Tryghed</h3> 
- 
-           <p> 
-               Alle mennesker skal kunne føle sig trygge 
-               i deres hverdag. 
-           </p> 
- 
-       </div> 
- 
- 
-       <div class="value"> 
- 
-           <div class="value-number">03</div> 
- 
-           <h3>Ansvar</h3> 
- 
-           <p> 
-               Vi mener, at man skal tage ansvar for sine 
-               handlinger og respektere loven. 
-           </p> 
- 
-       </div> 
- 
- 
-       <div class="value"> 
- 
-           <div class="value-number">04</div> 
- 
-           <h3>Integration</h3> 
- 
-           <p> 
-               Vi ønsker klare forventninger til mennesker, 
-               der ønsker at bo i Danmark. 
-           </p> 
- 
-       </div> 
- 
-   </div> 
- 
-</section> 
- 
- 
-<!-- PARTIPROGRAM --> 
- 
-<section class="program" id="program"> 
- 
-   <div class="program-inner"> 
- 
-       <div class="program-header"> 
- 
-           <h2> 
-               VORES<br> 
-               <span>PROGRAM</span> 
-           </h2> 
- 
-           <p> 
-               Dansk Styrke arbejder for et Danmark med 
-               tydelige regler, stærkt fællesskab og fokus 
-               på tryghed. 
-           </p> 
- 
-       </div> 
- 
- 
-       <div class="program-list"> 
- 
-           <div class="program-row"> 
-               <div class="program-number">01</div> 
-               <p>Styrke dansk kultur og danske traditioner.</p> 
-           </div> 
- 
-           <div class="program-row"> 
-               <div class="program-number">02</div> 
-               <p>Skabe et tryggere Danmark.</p> 
-           </div> 
- 
-           <div class="program-row"> 
-               <div class="program-number">03</div> 
-               <p>Bekæmpe kriminalitet.</p> 
-           </div> 
- 
-           <div class="program-row"> 
-               <div class="program-number">04</div> 
-               <p>Sikre tydelige konsekvenser for alvorlig kriminalitet.</p> 
-           </div> 
- 
-           <div class="program-row"> 
-               <div class="program-number">05</div> 
-               <p>Føre en strammere udlændingepolitik.</p> 
-           </div> 
- 
-           <div class="program-row"> 
-               <div class="program-number">06</div> 
-               <p> 
-                   Arbejde for udvisning ved alvorlig kriminalitet, 
-                   når det er muligt efter dansk lovgivning. 
-               </p> 
-           </div> 
- 
-           <div class="program-row"> 
-               <div class="program-number">07</div> 
-               <p> 
-                   Stille krav om respekt for dansk lov og samfundets 
-                   grundlæggende regler. 
-               </p> 
-           </div> 
- 
-           <div class="program-row"> 
-               <div class="program-number">08</div> 
-               <p> 
-                   Sætte borgernes tryghed og sikkerhed højt 
-                   på den politiske dagsorden. 
-               </p> 
-           </div> 
- 
-       </div> 
- 
-   </div> 
- 
-</section> 
- 
- 
-<!-- HADERSLEV --> 
- 
-<section class="local" id="haderslev"> 
- 
-   <div class="local-grid"> 
- 
-       <div> 
- 
-           <h2> 
-               ET TRYGGERE<br> 
-               <span>HADERSLEV.</span> 
-           </h2> 
- 
-           <p class="local-description"> 
-               Vores lokale mærkesag er at gøre Haderslev 
-               til et tryggere sted at bo, gå i skole og færdes. 
-           </p> 
- 
- 
-           <ul class="local-list"> 
- 
-               <li>Mere synligt politi i Haderslev.</li> 
- 
-               <li>Større fokus på kriminalitet og hærværk.</li> 
- 
-               <li>Tryggere områder omkring skoler.</li> 
- 
-               <li>Bedre belysning på utrygge steder.</li> 
- 
-               <li>Forebyggelse af kriminalitet blandt unge.</li> 
- 
-               <li>Hurtigere reaktion på gentagen kriminalitet.</li> 
- 
-           </ul> 
- 
-       </div> 
- 
- 
-       <div class="local-image"> 
-           HADERSLEV-BILLEDE 
-       </div> 
- 
-   </div> 
- 
-</section> 
- 
- 
-<!-- MÅL --> 
- 
-<section class="goals"> 
- 
-   <h2> 
-       VORES<br> 
-       FREMTID. 
-   </h2> 
- 
-   <p> 
-       Dansk Styrke ønsker et Danmark med stærkt fællesskab, 
-       tydelige regler og større fokus på tryghed. 
-   </p> 
- 
-</section> 
- 
- 
-<!-- FOOTER --> 
- 
-<footer> 
- 
-   <div class="footer-inner"> 
- 
-       <div class="footer-logo"> 
-           DANSK <span>STYRKE</span> 
-       </div> 
- 
-       <p> 
-           Et stærkere og tryggere Danmark 
-       </p> 
- 
-   </div> 
- 
-</footer> 
- 
+<!DOCTYPE html>
+<html lang="da">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Dansk Styrke</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #0a0a0a;
+    color: #fff;
+}
+
+/* =========================
+   LANDING PAGE
+========================= */
+
+#landing {
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    background:
+        linear-gradient(rgba(0,0,0,.58), rgba(0,0,0,.75)),
+        url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=2000&q=90")
+        center/cover;
+}
+
+.landing-content {
+    max-width: 900px;
+    padding: 30px;
+}
+
+.landing-content h1 {
+    font-size: clamp(55px, 10vw, 140px);
+    font-weight: 900;
+    letter-spacing: -5px;
+    line-height: .9;
+}
+
+.landing-content p {
+    margin-top: 25px;
+    font-size: 18px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+}
+
+.enter-button {
+    display: inline-block;
+    margin-top: 50px;
+    padding: 20px 38px;
+
+    color: #000;
+    background: #fff;
+
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 2px;
+
+    transition: .3s;
+}
+
+.enter-button:hover {
+    background: #d9d9d9;
+    transform: translateY(-3px);
+}
+
+/* =========================
+   MAIN SITE
+========================= */
+
+#site {
+    display: none;
+}
+
+#site.active {
+    display: block;
+}
+
+/* HEADER */
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+
+    padding: 25px 35px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    z-index: 100;
+    mix-blend-mode: difference;
+}
+
+.logo {
+    color: white;
+    font-size: 18px;
+    font-weight: 900;
+    letter-spacing: 2px;
+}
+
+.menu-button {
+    color: white;
+    background: none;
+    border: none;
+
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 2px;
+
+    cursor: pointer;
+}
+
+/* MENU */
+
+.menu-overlay {
+    position: fixed;
+    inset: 0;
+    background: #111;
+    z-index: 200;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    opacity: 0;
+    pointer-events: none;
+    transition: .4s;
+}
+
+.menu-overlay.open {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.close-menu {
+    position: absolute;
+    top: 25px;
+    right: 35px;
+
+    color: white;
+    background: none;
+    border: none;
+
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    cursor: pointer;
+}
+
+.menu-links {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    text-align: center;
+}
+
+.menu-links a {
+    color: white;
+    text-decoration: none;
+
+    font-size: clamp(35px, 6vw, 80px);
+    font-weight: 900;
+    letter-spacing: -2px;
+
+    transition: .25s;
+}
+
+.menu-links a:hover {
+    opacity: .45;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    height: 100vh;
+    min-height: 650px;
+
+    display: flex;
+    align-items: flex-end;
+
+    padding: 45px;
+
+    background:
+        linear-gradient(transparent 40%, rgba(0,0,0,.8)),
+        url("https://images.unsplash.com/photo-1519501025264-65ba15a82390?auto=format&fit=crop&w=2200&q=90")
+        center/cover;
+}
+
+.hero-text {
+    max-width: 900px;
+}
+
+.hero-text span {
+    font-size: 13px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+.hero-text h2 {
+    margin-top: 15px;
+
+    font-size: clamp(55px, 10vw, 150px);
+    line-height: .85;
+    letter-spacing: -6px;
+    font-weight: 900;
+}
+
+/* =========================
+   SECTIONS
+========================= */
+
+section {
+    padding: 140px 7vw;
+}
+
+.section-label {
+    font-size: 12px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    opacity: .55;
+    margin-bottom: 30px;
+}
+
+.big-title {
+    font-size: clamp(45px, 7vw, 110px);
+    line-height: .9;
+    letter-spacing: -4px;
+    font-weight: 900;
+    max-width: 1100px;
+}
+
+.text {
+    max-width: 700px;
+    font-size: 20px;
+    line-height: 1.6;
+    margin-top: 45px;
+}
+
+/* IMAGE */
+
+.large-image {
+    width: 100%;
+    height: 75vh;
+    min-height: 500px;
+    object-fit: cover;
+    display: block;
+    margin-top: 80px;
+}
+
+/* =========================
+   VALUES
+========================= */
+
+.values {
+    margin-top: 80px;
+    border-top: 1px solid #333;
+}
+
+.value {
+    padding: 45px 0;
+
+    border-bottom: 1px solid #333;
+
+    display: flex;
+    align-items: center;
+    gap: 35px;
+
+    transition: .3s;
+}
+
+.value:hover {
+    padding-left: 20px;
+}
+
+.value-number {
+    font-size: 14px;
+    opacity: .5;
+    width: 50px;
+}
+
+.value h3 {
+    font-size: clamp(30px, 5vw, 70px);
+    font-weight: 800;
+}
+
+/* =========================
+   PROGRAM
+========================= */
+
+.program {
+    margin-top: 80px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: #333;
+}
+
+.program-item {
+    background: #0a0a0a;
+    padding: 45px;
+    min-height: 220px;
+}
+
+.program-item span {
+    font-size: 13px;
+    opacity: .5;
+}
+
+.program-item h3 {
+    margin-top: 30px;
+    font-size: 28px;
+}
+
+.program-item p {
+    margin-top: 15px;
+    line-height: 1.6;
+    opacity: .7;
+}
+
+/* =========================
+   HADERSLEV
+========================= */
+
+.haderslev {
+    background: #f2f2f2;
+    color: #0a0a0a;
+}
+
+.haderslev .section-label {
+    opacity: .5;
+}
+
+.haderslev-list {
+    margin-top: 70px;
+    border-top: 1px solid #ccc;
+}
+
+.haderslev-item {
+    padding: 30px 0;
+    border-bottom: 1px solid #ccc;
+
+    font-size: 25px;
+    font-weight: bold;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    padding: 80px 7vw;
+
+    border-top: 1px solid #333;
+
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+footer strong {
+    font-size: 20px;
+}
+
+footer span {
+    opacity: .5;
+    font-size: 13px;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 700px) {
+
+    header {
+        padding: 20px;
+    }
+
+    .hero {
+        padding: 25px;
+    }
+
+    section {
+        padding: 90px 25px;
+    }
+
+    .hero-text h2 {
+        letter-spacing: -3px;
+    }
+
+    .big-title {
+        letter-spacing: -2px;
+    }
+
+    .large-image {
+        height: 55vh;
+        min-height: 350px;
+    }
+
+    .program {
+        grid-template-columns: 1fr;
+    }
+
+    .program-item {
+        padding: 30px;
+    }
+
+    footer {
+        padding: 60px 25px;
+        flex-direction: column;
+    }
+}
+</style>
+</head>
+
+
+<body>
+
+
+<!-- =================================
+     LANDING PAGE
+================================= -->
+
+<div id="landing">
+
+    <div class="landing-content">
+
+        <h1>DANSK<br>STYRKE</h1>
+
+        <p>For et stærkere og tryggere Danmark</p>
+
+        <a href="#" class="enter-button" onclick="enterSite()">
+            GÅ TIL HJEMMESIDEN →
+        </a>
+
+    </div>
+
+</div>
+
+
+
+<!-- =================================
+     MAIN SITE
+================================= -->
+
+<div id="site">
+
+
+<!-- HEADER -->
+
+<header>
+
+    <div class="logo">
+        DANSK STYRKE
+    </div>
+
+    <button class="menu-button" onclick="openMenu()">
+        MENU
+    </button>
+
+</header>
+
+
+
+<!-- MENU -->
+
+<div class="menu-overlay" id="menu">
+
+    <button class="close-menu" onclick="closeMenu()">
+        LUK ✕
+    </button>
+
+    <nav class="menu-links">
+
+        <a href="#om-os" onclick="closeMenu()">OM OS</a>
+
+        <a href="#vaerdier" onclick="closeMenu()">VORES VÆRDIER</a>
+
+        <a href="#program" onclick="closeMenu()">PARTIPROGRAM</a>
+
+        <a href="#haderslev" onclick="closeMenu()">HADERSLEV</a>
+
+    </nav>
+
+</div>
+
+
+
+<!-- HERO -->
+
+<div class="hero">
+
+    <div class="hero-text">
+
+        <span>Dansk Styrke</span>
+
+        <h2>
+            ET STÆRKERE<br>
+            DANMARK.
+        </h2>
+
+    </div>
+
+</div>
+
+
+
+<!-- OM OS -->
+
+<section id="om-os">
+
+    <div class="section-label">
+        01 — Om os
+    </div>
+
+    <h2 class="big-title">
+        ET DANMARK MED
+        TRYGHED, ANSVAR
+        OG SAMMENHOLD.
+    </h2>
+
+    <p class="text">
+        Dansk Styrke arbejder for et Danmark,
+        hvor tryghed, ansvar og danske
+        traditioner står centralt.
+    </p>
+
+    <!-- SKIFT DETTE BILLEDE HVIS DU VIL -->
+    <img
+        class="large-image"
+        src="https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=2200&q=90"
+        alt="Danmark"
+    >
+
+</section>
+
+
+
+<!-- VÆRDIER -->
+
+<section id="vaerdier">
+
+    <div class="section-label">
+        02 — Vores værdier
+    </div>
+
+    <h2 class="big-title">
+        DET VI STÅR FOR.
+    </h2>
+
+    <div class="values">
+
+        <div class="value">
+            <div class="value-number">01</div>
+            <h3>Dansk kultur</h3>
+        </div>
+
+        <div class="value">
+            <div class="value-number">02</div>
+            <h3>Tryghed</h3>
+        </div>
+
+        <div class="value">
+            <div class="value-number">03</div>
+            <h3>Ansvar</h3>
+        </div>
+
+        <div class="value">
+            <div class="value-number">04</div>
+            <h3>Integration</h3>
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- PARTIPROGRAM -->
+
+<section id="program">
+
+    <div class="section-label">
+        03 — Partiprogram
+    </div>
+
+    <h2 class="big-title">
+        VORES POLITISKE
+        FOKUSOMRÅDER.
+    </h2>
+
+
+    <div class="program">
+
+        <div class="program-item">
+            <span>01</span>
+            <h3>Dansk kultur</h3>
+            <p>
+                Styrke dansk kultur og danske traditioner.
+            </p>
+        </div>
+
+        <div class="program-item">
+            <span>02</span>
+            <h3>Tryghed</h3>
+            <p>
+                Skabe et tryggere Danmark og sætte
+                sikkerhed højt på dagsordenen.
+            </p>
+        </div>
+
+        <div class="program-item">
+            <span>03</span>
+            <h3>Kriminalitet</h3>
+            <p>
+                Bekæmpe kriminalitet og sikre tydelige
+                konsekvenser for alvorlig kriminalitet.
+            </p>
+        </div>
+
+        <div class="program-item">
+            <span>04</span>
+            <h3>Udlændingepolitik</h3>
+            <p>
+                Føre en strammere udlændingepolitik
+                inden for dansk lovgivning.
+            </p>
+        </div>
+
+        <div class="program-item">
+            <span>05</span>
+            <h3>Ansvar</h3>
+            <p>
+                Personer der bor i Danmark skal respektere
+                dansk lov og samfundets grundlæggende regler.
+            </p>
+        </div>
+
+        <div class="program-item">
+            <span>06</span>
+            <h3>Sikkerhed</h3>
+            <p>
+                Sætte danske borgeres tryghed og sikkerhed
+                højt på den politiske dagsorden.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- HADERSLEV -->
+
+<section id="haderslev" class="haderslev">
+
+    <div class="section-label">
+        04 — Haderslev
+    </div>
+
+    <h2 class="big-title">
+        ET TRYGGERE
+        HADERSLEV.
+    </h2>
+
+    <div class="haderslev-list">
+
+        <div class="haderslev-item">
+            Mere synligt politi
+        </div>
+
+        <div class="haderslev-item">
+            Større fokus på kriminalitet og hærværk
+        </div>
+
+        <div class="haderslev-item">
+            Tryggere områder omkring skoler
+        </div>
+
+        <div class="haderslev-item">
+            Bedre belysning på utrygge steder
+        </div>
+
+        <div class="haderslev-item">
+            Mere forebyggelse blandt unge
+        </div>
+
+        <div class="haderslev-item">
+            Hurtigere reaktion på gentagen kriminalitet
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <strong>DANSK STYRKE</strong>
+
+    <span>
+        For et stærkere og tryggere Danmark
+    </span>
+
+</footer>
+
+
+</div>
+
+
+
+<script>
+
+function enterSite() {
+
+    document.getElementById("landing").style.display = "none";
+
+    document.getElementById("site").classList.add("active");
+
+    window.scrollTo(0, 0);
+}
+
+
+function openMenu() {
+
+    document.getElementById("menu").classList.add("open");
+
+}
+
+
+function closeMenu() {
+
+    document.getElementById("menu").classList.remove("open");
+
+}
+
+</script>
+
+
+</body>
+</html>
