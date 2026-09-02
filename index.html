@@ -3,82 +3,206 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Min hjemmeside</title>
+    <title>Dansk Styrke</title>
 
     <style>
         body {
             margin: 0;
             font-family: Arial, sans-serif;
-            background: #f2f2f2;
+            background-color: #f4f4f4;
             color: #222;
         }
 
         header {
-            background: #222;
+            background-color: #8b0000;
             color: white;
             text-align: center;
-            padding: 60px 20px;
+            padding: 40px 20px;
         }
 
         header h1 {
             font-size: 45px;
-            margin: 0 0 10px;
+            margin: 0;
         }
 
         header p {
             font-size: 20px;
         }
 
-        main {
-            max-width: 900px;
-            margin: 40px auto;
-            padding: 20px;
+        nav {
+            background-color: #222;
             text-align: center;
+            padding: 15px;
         }
 
-        .box {
-            background: white;
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-        }
-
-        button {
-            padding: 12px 25px;
-            border: none;
-            border-radius: 8px;
-            background: #222;
+        nav a {
             color: white;
-            font-size: 16px;
-            cursor: pointer;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
         }
 
-        button:hover {
-            background: #444;
+        nav a:hover {
+            color: #ffcccc;
+        }
+
+        section {
+            max-width: 900px;
+            margin: 30px auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+        }
+
+        h2 {
+            color: #8b0000;
+            border-bottom: 2px solid #8b0000;
+            padding-bottom: 10px;
+        }
+
+        h3 {
+            color: #333;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        footer {
+            background-color: #222;
+            color: white;
+            text-align: center;
+            padding: 25px;
+            margin-top: 40px;
         }
     </style>
 </head>
 
 <body>
 
-    <header>
-        <h1>Velkommen!</h1>
-        <p>Dette er min nye hjemmeside</p>
-    </header>
+<header>
+    <h1>Dansk Styrke</h1>
+    <p>For et stærkere og tryggere Danmark</p>
+</header>
 
-    <main>
-        <div class="box">
-            <h2>Om hjemmesiden</h2>
+<nav>
+    <a href="#om-os">Om os</a>
+    <a href="#vaerdier">Værdier</a>
+    <a href="#partiprogram">Partiprogram</a>
+    <a href="#haderslev">Haderslev</a>
+</nav>
 
-            <p>
-                Velkommen til min hjemmeside.
-                Her kan jeg skrive alt det, jeg gerne vil fortælle.
-            </p>
+<section id="om-os">
+    <h2>Om Dansk Styrke</h2>
 
-            <button>Klik her</button>
-        </div>
-    </main>
+    <p>
+        Dansk Styrke er et parti, der ønsker at sætte Danmark, dansk kultur,
+        tryghed og ansvar i centrum.
+    </p>
+
+    <p>
+        Vi mener, at Danmark skal have klare regler, og at alle, der bor i
+        Danmark, skal respektere vores love og samfund.
+    </p>
+
+    <p>
+        Vi ønsker et Danmark, hvor borgerne kan føle sig trygge, og hvor
+        kriminalitet har tydelige konsekvenser.
+    </p>
+</section>
+
+<section id="vaerdier">
+    <h2>Vores værdier</h2>
+
+    <h3>Dansk kultur</h3>
+    <p>
+        Vi ønsker at bevare og styrke dansk kultur, historie, traditioner
+        og fællesskab.
+    </p>
+
+    <h3>Tryghed</h3>
+    <p>
+        Alle mennesker skal kunne føle sig trygge i deres hverdag.
+        Vi ønsker et stærkt fokus på at bekæmpe kriminalitet.
+    </p>
+
+    <h3>Ansvar</h3>
+    <p>
+        Vi mener, at man skal tage ansvar for sine handlinger og respektere
+        de regler og love, der gælder i Danmark.
+    </p>
+
+    <h3>Integration</h3>
+    <p>
+        Vi mener, at personer, der ønsker at bo i Danmark, skal respektere
+        dansk lovgivning og samfundets grundlæggende regler.
+    </p>
+</section>
+
+<section id="partiprogram">
+    <h2>Vores partiprogram</h2>
+
+    <p>Dansk Styrke arbejder for:</p>
+
+    <ol>
+        <li>At styrke dansk kultur og danske traditioner.</li>
+        <li>At skabe et tryggere Danmark.</li>
+        <li>At bekæmpe kriminalitet.</li>
+        <li>At sikre tydelige konsekvenser for alvorlig kriminalitet.</li>
+        <li>At have en strammere udlændingepolitik.</li>
+        <li>At personer, der begår alvorlig kriminalitet, kan blive udvist,
+            når det er muligt efter dansk lovgivning.</li>
+        <li>At personer, der bor i Danmark, respekterer dansk lov og de
+            grundlæggende regler i samfundet.</li>
+        <li>At sætte danske borgeres tryghed og sikkerhed højt på den
+            politiske dagsorden.</li>
+    </ol>
+</section>
+
+<section id="haderslev">
+    <h2>Lokal mærkesag: Et tryggere Haderslev</h2>
+
+    <p>
+        Vores lokale mærkesag er at gøre Haderslev til et tryggere sted
+        at bo, gå i skole og færdes.
+    </p>
+
+    <h3>Vi vil arbejde for:</h3>
+
+    <ul>
+        <li>Mere synligt politi i Haderslev.</li>
+        <li>Større fokus på kriminalitet og hærværk.</li>
+        <li>Tryggere områder omkring skoler.</li>
+        <li>Bedre belysning på utrygge steder.</li>
+        <li>Et større fokus på forebyggelse af kriminalitet blandt unge.</li>
+        <li>Hurtigere reaktion på gentagen kriminalitet.</li>
+    </ul>
+
+    <p>
+        Vi mener, at Haderslev skal være en by, hvor børn, unge og voksne
+        kan færdes uden at være bange for kriminalitet.
+    </p>
+</section>
+
+<section>
+    <h2>Vores mål</h2>
+
+    <p>
+        Dansk Styrke ønsker et Danmark med stærkt fællesskab, tydelige regler
+        og større fokus på tryghed.
+    </p>
+
+    <p>
+        Vi ønsker at føre en politik, hvor man både beskytter danske
+        værdier og stiller tydelige krav til mennesker, der ønsker at bo
+        i Danmark.
+    </p>
+</section>
+
+<footer>
+    <p>Dansk Styrke</p>
+    <p>Et stærkere og tryggere Danmark</p>
+</footer>
 
 </body>
 </html>
