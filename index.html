@@ -1,629 +1,493 @@
 <!DOCTYPE html>
-
 <html lang="da">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-```
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Dansk Styrke</title>
 
 <style>
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-    html {
-        scroll-behavior: smooth;
-    }
+html {
+    scroll-behavior: smooth;
+}
 
-    body {
-        font-family: Arial, Helvetica, sans-serif;
-        background: #080808;
-        color: white;
-    }
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #080808;
+    color: white;
+    line-height: 1.6;
+}
 
-    /* =========================
-       NAVIGATION
-    ========================= */
+/* NAVIGATION */
 
-    .navbar {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        z-index: 1000;
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
 
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 
-        padding: 22px 5%;
+    padding: 20px 5%;
 
-        background: rgba(8, 8, 8, 0.75);
-        backdrop-filter: blur(12px);
+    background: rgba(8,8,8,0.85);
+    backdrop-filter: blur(15px);
 
-        border-bottom: 1px solid rgba(255,255,255,0.08);
-    }
+    border-bottom: 1px solid #222;
+}
 
-    .logo {
-        font-size: 22px;
-        font-weight: 900;
-        letter-spacing: 2px;
-    }
+.logo {
+    font-size: 22px;
+    font-weight: 900;
+    letter-spacing: 2px;
+}
 
-    .logo span {
-        color: #b00000;
-    }
+.logo span {
+    color: #b00000;
+}
+
+.menu {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+}
+
+.menu a {
+    color: #ddd;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.menu a:hover {
+    color: #c00000;
+}
+
+/* HERO */
+
+.hero {
+    min-height: 100vh;
+
+    display: flex;
+    align-items: flex-end;
+
+    padding: 0 5% 10%;
+
+    position: relative;
+
+    background:
+        linear-gradient(to top,#080808 0%,rgba(8,8,8,.3),rgba(8,8,8,.1));
+}
+
+.hero-bg {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+
+    background:
+        radial-gradient(circle at center,#260000,#0b0b0b 55%,#050505);
+}
+
+.hero-content {
+    max-width: 900px;
+}
+
+.hero-small {
+    color: #aaa;
+    letter-spacing: 4px;
+    font-size: 13px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-size: clamp(60px,10vw,125px);
+    line-height: .85;
+    letter-spacing: -6px;
+    margin-bottom: 30px;
+}
+
+.hero h1 span {
+    color: #b00000;
+}
+
+.hero p {
+    color: #bbb;
+    max-width: 650px;
+    font-size: 19px;
+    margin-bottom: 35px;
+}
+
+.button {
+    display: inline-block;
+    padding: 15px 28px;
+
+    background: white;
+    color: black;
+
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 13px;
+
+    transition: .3s;
+}
+
+.button:hover {
+    background: #b00000;
+    color: white;
+}
+
+/* INTRO */
+
+.intro {
+    padding: 140px 5%;
+}
+
+.intro-grid {
+    max-width: 1400px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+}
+
+.intro h2 {
+    font-size: clamp(50px,7vw,90px);
+    line-height: .9;
+    letter-spacing: -4px;
+}
+
+.intro h2 span {
+    color: #b00000;
+}
+
+.intro-text {
+    color: #999;
+    font-size: 18px;
+    line-height: 1.8;
+}
+
+/* IMAGE */
+
+.image-section {
+    height: 600px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background:
+        linear-gradient(135deg,#171717,#080808);
+
+    color: #333;
+    letter-spacing: 3px;
+}
+
+/* VALUES */
+
+.values {
+    padding: 140px 5%;
+    background: #f1f1f1;
+    color: #080808;
+}
+
+.section-title {
+    max-width: 1400px;
+    margin: auto;
+    margin-bottom: 60px;
+}
+
+.section-title small {
+    color: #b00000;
+    font-weight: bold;
+    letter-spacing: 3px;
+}
+
+.section-title h2 {
+    font-size: clamp(50px,7vw,90px);
+    line-height: .9;
+    letter-spacing: -4px;
+    margin-top: 15px;
+}
+
+.values-grid {
+    max-width: 1400px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 3px;
+}
+
+/* CLICKABLE VALUE */
+
+.value-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.value {
+    background: #e2e2e2;
+    padding: 45px;
+    min-height: 300px;
+
+    transition: .35s;
+
+    position: relative;
+}
+
+.value:hover {
+    background: #d2d2d2;
+    transform: translateY(-5px);
+}
+
+.value-number {
+    color: #888;
+    font-size: 13px;
+    margin-bottom: 45px;
+}
+
+.value h3 {
+    font-size: 30px;
+    margin-bottom: 15px;
+}
+
+.value p {
+    color: #666;
+    max-width: 500px;
+}
+
+.read-more {
+    position: absolute;
+    bottom: 30px;
+    right: 35px;
+
+    color: #b00000;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+/* PROGRAM */
+
+.program {
+    padding: 140px 5%;
+}
+
+.program-inner {
+    max-width: 1400px;
+    margin: auto;
+}
+
+.program-header {
+    margin-bottom: 70px;
+}
+
+.program-header h2 {
+    font-size: clamp(50px,7vw,90px);
+    line-height: .9;
+    letter-spacing: -4px;
+}
+
+.program-header span {
+    color: #b00000;
+}
+
+.program-list {
+    border-top: 1px solid #292929;
+}
+
+.program-row {
+    display: grid;
+    grid-template-columns: 80px 1fr;
+
+    padding: 28px 0;
+
+    border-bottom: 1px solid #292929;
+
+    transition: .3s;
+}
+
+.program-row:hover {
+    padding-left: 15px;
+}
+
+.program-number {
+    color: #b00000;
+    font-weight: bold;
+}
+
+.program-row p {
+    color: #ddd;
+    font-size: 18px;
+}
+
+/* HADERSLEV */
+
+.local {
+    padding: 140px 5%;
+    background: #111;
+}
+
+.local-grid {
+    max-width: 1400px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 70px;
+    align-items: center;
+}
+
+.local h2 {
+    font-size: clamp(50px,7vw,95px);
+    line-height: .9;
+    letter-spacing: -5px;
+    margin-bottom: 30px;
+}
+
+.local h2 span {
+    color: #b00000;
+}
+
+.local p {
+    color: #999;
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+.local ul {
+    list-style: none;
+}
+
+.local li {
+    padding: 15px 0;
+    border-bottom: 1px solid #292929;
+    color: #ddd;
+}
+
+.local li::before {
+    content: "—";
+    color: #b00000;
+    margin-right: 12px;
+}
+
+/* GOALS */
+
+.goals {
+    padding: 160px 5%;
+    background: #b00000;
+    text-align: center;
+}
+
+.goals h2 {
+    font-size: clamp(55px,8vw,110px);
+    line-height: .9;
+    letter-spacing: -5px;
+    margin-bottom: 35px;
+}
+
+.goals p {
+    max-width: 700px;
+    margin: auto;
+    font-size: 20px;
+}
+
+/* FOOTER */
+
+footer {
+    padding: 70px 5%;
+    background: #050505;
+}
+
+.footer-inner {
+    max-width: 1400px;
+    margin: auto;
+
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer-logo {
+    font-size: 25px;
+    font-weight: 900;
+}
+
+.footer-logo span {
+    color: #b00000;
+}
+
+footer p {
+    color: #555;
+}
+
+/* MOBILE */
+
+@media(max-width:800px) {
 
     .menu {
-        display: flex;
-        gap: 35px;
-        list-style: none;
+        gap: 12px;
     }
 
     .menu a {
-        color: white;
-        text-decoration: none;
-        font-size: 14px;
-        font-weight: bold;
-        transition: 0.3s;
+        font-size: 10px;
     }
 
-    .menu a:hover {
-        color: #c00000;
-    }
-
-
-    /* =========================
-       HERO
-    ========================= */
-
-    .hero {
-        height: 100vh;
-        min-height: 650px;
-
-        display: flex;
-        align-items: flex-end;
-
-        padding: 0 5% 9%;
-
-        position: relative;
-
-        background:
-            linear-gradient(
-                to top,
-                #080808 0%,
-                rgba(8,8,8,0.25) 55%,
-                rgba(8,8,8,0.15) 100%
-            );
-
-        overflow: hidden;
-    }
-
-    /* Midlertidigt område til første billede */
-
-    .hero-image {
-        position: absolute;
-        inset: 0;
-        z-index: -1;
-
-        background:
-            linear-gradient(
-                135deg,
-                #151515,
-                #050505
-            );
-    }
-
-    .hero-image::after {
-        content: "DIT FØRSTE BILLEDE";
-        position: absolute;
-
-        top: 50%;
-        left: 50%;
-
-        transform: translate(-50%, -50%);
-
-        color: #333;
-        font-size: 18px;
-        letter-spacing: 3px;
-    }
-
-    .hero-content {
-        max-width: 850px;
-    }
-
-    .hero-small {
-        color: #ccc;
-        font-size: 14px;
-        font-weight: bold;
-        letter-spacing: 3px;
-        margin-bottom: 20px;
-    }
-
-    .hero h1 {
-        font-size: clamp(60px, 10vw, 130px);
-        line-height: 0.85;
-        letter-spacing: -6px;
-        font-weight: 900;
-        margin-bottom: 30px;
-    }
-
-    .hero h1 span {
-        color: #b00000;
-    }
-
-    .hero-text {
-        max-width: 600px;
-        color: #ccc;
-        font-size: 19px;
-        line-height: 1.6;
-        margin-bottom: 35px;
-    }
-
-    .button {
-        display: inline-block;
-
-        padding: 15px 28px;
-
-        background: white;
-        color: black;
-
-        text-decoration: none;
-        font-weight: bold;
-        font-size: 14px;
-
-        transition: 0.3s;
-    }
-
-    .button:hover {
-        background: #b00000;
-        color: white;
-    }
-
-
-    /* =========================
-       INTRO
-    ========================= */
-
-    .intro {
-        padding: 130px 5%;
-        background: #080808;
-    }
-
-    .intro-grid {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 80px;
-        align-items: center;
-        max-width: 1400px;
-        margin: auto;
-    }
-
-    .intro-title {
-        font-size: clamp(45px, 6vw, 80px);
-        line-height: 0.95;
-        letter-spacing: -3px;
-    }
-
-    .intro-title span {
-        color: #b00000;
-    }
-
-    .intro-text {
-        color: #999;
-        font-size: 18px;
-        line-height: 1.8;
-    }
-
-
-    /* =========================
-       STORT BILLEDE
-    ========================= */
-
-    .visual-section {
-        width: 100%;
-        height: 650px;
-
-        position: relative;
-
-        background: #111;
-        overflow: hidden;
-    }
-
-    .visual-placeholder {
-        width: 100%;
-        height: 100%;
-
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
-        background:
-            linear-gradient(
-                135deg,
-                #161616,
-                #090909
-            );
-
-        color: #333;
-        font-size: 18px;
-        letter-spacing: 3px;
-    }
-
-
-    /* =========================
-       VÆRDIER
-    ========================= */
-
-    .values {
-        padding: 130px 5%;
-        background: #f2f2f2;
-        color: #080808;
-    }
-
-    .section-header {
-        max-width: 1400px;
-        margin: auto;
-        margin-bottom: 60px;
-    }
-
-    .section-header small {
-        color: #b00000;
-        font-weight: bold;
-        letter-spacing: 3px;
-    }
-
-    .section-header h2 {
-        font-size: clamp(45px, 6vw, 80px);
-        line-height: 1;
-        letter-spacing: -3px;
-        margin-top: 15px;
+    .intro-grid,
+    .local-grid {
+        grid-template-columns: 1fr;
     }
 
     .values-grid {
-        max-width: 1400px;
-        margin: auto;
-
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 2px;
+        grid-template-columns: 1fr;
     }
 
-    .value {
-        background: #e5e5e5;
-        padding: 45px 30px;
-        min-height: 280px;
+    .image-section {
+        height: 450px;
+    }
+}
 
-        transition: 0.3s;
+@media(max-width:550px) {
+
+    .navbar {
+        padding: 15px 4%;
     }
 
-    .value:hover {
-        background: #d5d5d5;
+    .logo {
+        font-size: 16px;
     }
 
-    .value-number {
-        font-size: 13px;
-        color: #888;
-        margin-bottom: 40px;
-    }
-
-    .value h3 {
-        font-size: 27px;
-        margin-bottom: 15px;
-    }
-
-    .value p {
-        color: #666;
-        line-height: 1.7;
-    }
-
-
-    /* =========================
-       PARTIPROGRAM
-    ========================= */
-
-    .program {
-        padding: 140px 5%;
-        background: #080808;
-    }
-
-    .program-inner {
-        max-width: 1400px;
-        margin: auto;
-    }
-
-    .program-header {
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-end;
-
-        margin-bottom: 70px;
-    }
-
-    .program-header h2 {
-        font-size: clamp(45px, 6vw, 80px);
-        line-height: 0.95;
+    .hero h1 {
+        font-size: 60px;
         letter-spacing: -3px;
     }
 
-    .program-header h2 span {
-        color: #b00000;
-    }
-
-    .program-header p {
-        max-width: 400px;
-        color: #777;
-        line-height: 1.7;
-    }
-
-    .program-list {
-        border-top: 1px solid #292929;
+    .value {
+        padding: 30px;
     }
 
     .program-row {
-        display: grid;
-        grid-template-columns: 80px 1fr;
-
-        padding: 28px 0;
-
-        border-bottom: 1px solid #292929;
-
-        transition: 0.3s;
-    }
-
-    .program-row:hover {
-        padding-left: 15px;
-    }
-
-    .program-number {
-        color: #b00000;
-        font-weight: bold;
-    }
-
-    .program-row p {
-        color: #ddd;
-        font-size: 18px;
-    }
-
-
-    /* =========================
-       HADERSLEV
-    ========================= */
-
-    .local {
-        padding: 130px 5%;
-        background: #111;
-    }
-
-    .local-grid {
-        max-width: 1400px;
-        margin: auto;
-
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 70px;
-        align-items: center;
-    }
-
-    .local h2 {
-        font-size: clamp(50px, 7vw, 95px);
-        line-height: 0.9;
-        letter-spacing: -5px;
-        margin-bottom: 30px;
-    }
-
-    .local h2 span {
-        color: #b00000;
-    }
-
-    .local-description {
-        color: #999;
-        font-size: 18px;
-        line-height: 1.8;
-        max-width: 550px;
-        margin-bottom: 35px;
-    }
-
-    .local-list {
-        list-style: none;
-    }
-
-    .local-list li {
-        padding: 15px 0;
-        border-bottom: 1px solid #292929;
-        color: #ddd;
-    }
-
-    .local-list li::before {
-        content: "—";
-        color: #b00000;
-        margin-right: 12px;
-    }
-
-    .local-image {
-        height: 600px;
-
-        background:
-            linear-gradient(
-                135deg,
-                #1c1c1c,
-                #090909
-            );
-
-        display: flex;
-        align-items: center;
-        justify-content: center;
-
-        color: #333;
-        letter-spacing: 3px;
-    }
-
-
-    /* =========================
-       MÅL
-    ========================= */
-
-    .goals {
-        padding: 170px 5%;
-        background: #b00000;
-        text-align: center;
-    }
-
-    .goals h2 {
-        font-size: clamp(50px, 8vw, 110px);
-        line-height: 0.9;
-        letter-spacing: -5px;
-        margin-bottom: 35px;
-    }
-
-    .goals p {
-        max-width: 700px;
-        margin: auto;
-        font-size: 20px;
-        line-height: 1.7;
-    }
-
-
-    /* =========================
-       FOOTER
-    ========================= */
-
-    footer {
-        padding: 70px 5%;
-        background: #050505;
+        grid-template-columns: 50px 1fr;
     }
 
     .footer-inner {
-        max-width: 1400px;
-        margin: auto;
-
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+        display: block;
     }
-
-    .footer-logo {
-        font-size: 25px;
-        font-weight: 900;
-        letter-spacing: 2px;
-    }
-
-    .footer-logo span {
-        color: #b00000;
-    }
-
-    footer p {
-        color: #555;
-        font-size: 14px;
-    }
-
-
-    /* =========================
-       MOBIL
-    ========================= */
-
-    @media (max-width: 900px) {
-
-        .menu {
-            gap: 15px;
-        }
-
-        .menu a {
-            font-size: 12px;
-        }
-
-        .intro-grid,
-        .local-grid {
-            grid-template-columns: 1fr;
-            gap: 50px;
-        }
-
-        .values-grid {
-            grid-template-columns: 1fr 1fr;
-        }
-
-        .program-header {
-            display: block;
-        }
-
-        .program-header p {
-            margin-top: 25px;
-        }
-
-        .local-image {
-            height: 450px;
-        }
-    }
-
-
-    @media (max-width: 600px) {
-
-        .navbar {
-            padding: 18px 5%;
-        }
-
-        .logo {
-            font-size: 17px;
-        }
-
-        .menu {
-            gap: 10px;
-        }
-
-        .menu a {
-            font-size: 10px;
-        }
-
-        .hero {
-            padding: 0 5% 12%;
-        }
-
-        .hero h1 {
-            font-size: 62px;
-            letter-spacing: -3px;
-        }
-
-        .hero-text {
-            font-size: 16px;
-        }
-
-        .values-grid {
-            grid-template-columns: 1fr;
-        }
-
-        .visual-section {
-            height: 450px;
-        }
-
-        .program-row {
-            grid-template-columns: 50px 1fr;
-        }
-
-        .program-row p {
-            font-size: 16px;
-        }
-
-        .footer-inner {
-            display: block;
-        }
-
-        footer p {
-            margin-top: 15px;
-        }
-    }
-
+}
 </style>
-```
-
 </head>
 
 <body>
 
-```
 <!-- NAVIGATION -->
 
 <nav class="navbar">
@@ -646,7 +510,7 @@
 
 <header class="hero">
 
-    <div class="hero-image"></div>
+    <div class="hero-bg"></div>
 
     <div class="hero-content">
 
@@ -659,14 +523,12 @@
             <span>DANMARK.</span>
         </h1>
 
-        <p class="hero-text">
+        <p>
             For et stærkere, tryggere og mere samlet Danmark.
-            Vi ønsker at sætte tryghed, ansvar, dansk kultur
-            og fællesskab i centrum.
         </p>
 
         <a href="#om-os" class="button">
-            UDFORSK DANSK STYRKE
+            LÆS MERE
         </a>
 
     </div>
@@ -674,13 +536,13 @@
 </header>
 
 
-<!-- INTRO -->
+<!-- OM OS -->
 
 <section class="intro" id="om-os">
 
     <div class="intro-grid">
 
-        <h2 class="intro-title">
+        <h2>
             DANMARK<br>
             <span>FØRST.</span>
         </h2>
@@ -688,17 +550,16 @@
         <div class="intro-text">
 
             <p>
-                Dansk Styrke er et politisk projekt, der ønsker at
-                sætte Danmark, dansk kultur, tryghed og ansvar
-                i centrum.
+                Dansk Styrke ønsker at sætte Danmark,
+                dansk kultur, tryghed og ansvar i centrum.
             </p>
 
             <br>
 
             <p>
-                Vi mener, at Danmark skal have klare regler, og at
-                alle, der bor i Danmark, skal respektere vores love
-                og samfund.
+                Vi mener, at Danmark skal have klare regler,
+                og at alle, der bor i Danmark, skal respektere
+                vores love og samfund.
             </p>
 
         </div>
@@ -708,22 +569,18 @@
 </section>
 
 
-<!-- STORT BILLEDE -->
+<!-- IMAGE -->
 
-<section class="visual-section">
-
-    <div class="visual-placeholder">
-        DIT BILLEDE KOMMER HER
-    </div>
-
+<section class="image-section">
+    BILLEDE KOMMER HER
 </section>
 
 
-<!-- VÆRDIER -->
+<!-- VALUES -->
 
 <section class="values" id="vaerdier">
 
-    <div class="section-header">
+    <div class="section-title">
 
         <small>VORES GRUNDLAG</small>
 
@@ -737,68 +594,99 @@
 
     <div class="values-grid">
 
+        <a href="dansk-kultur.html" class="value-link">
 
-        <div class="value">
+            <div class="value">
 
-            <div class="value-number">01</div>
+                <div class="value-number">01</div>
 
-            <h3>Dansk kultur</h3>
+                <h3>Dansk kultur</h3>
 
-            <p>
-                Vi ønsker at bevare og styrke dansk kultur,
-                historie, traditioner og fællesskab.
-            </p>
+                <p>
+                    Vores syn på dansk historie,
+                    traditioner, sprog og fællesskab.
+                </p>
 
-        </div>
+                <div class="read-more">
+                    LÆS MERE →
+                </div>
 
+            </div>
 
-        <div class="value">
-
-            <div class="value-number">02</div>
-
-            <h3>Tryghed</h3>
-
-            <p>
-                Alle mennesker skal kunne føle sig trygge
-                i deres hverdag.
-            </p>
-
-        </div>
+        </a>
 
 
-        <div class="value">
+        <a href="tryghed.html" class="value-link">
 
-            <div class="value-number">03</div>
+            <div class="value">
 
-            <h3>Ansvar</h3>
+                <div class="value-number">02</div>
 
-            <p>
-                Vi mener, at man skal tage ansvar for sine
-                handlinger og respektere loven.
-            </p>
+                <h3>Tryghed</h3>
 
-        </div>
+                <p>
+                    Vores fokus på sikkerhed,
+                    kriminalitet og trygge lokalsamfund.
+                </p>
+
+                <div class="read-more">
+                    LÆS MERE →
+                </div>
+
+            </div>
+
+        </a>
 
 
-        <div class="value">
+        <a href="ansvar.html" class="value-link">
 
-            <div class="value-number">04</div>
+            <div class="value">
 
-            <h3>Integration</h3>
+                <div class="value-number">03</div>
 
-            <p>
-                Vi ønsker klare forventninger til mennesker,
-                der ønsker at bo i Danmark.
-            </p>
+                <h3>Ansvar</h3>
 
-        </div>
+                <p>
+                    Vores syn på personligt ansvar,
+                    regler og konsekvenser.
+                </p>
+
+                <div class="read-more">
+                    LÆS MERE →
+                </div>
+
+            </div>
+
+        </a>
+
+
+        <a href="integration.html" class="value-link">
+
+            <div class="value">
+
+                <div class="value-number">04</div>
+
+                <h3>Integration</h3>
+
+                <p>
+                    Vores syn på integration,
+                    fælles regler og deltagelse i samfundet.
+                </p>
+
+                <div class="read-more">
+                    LÆS MERE →
+                </div>
+
+            </div>
+
+        </a>
 
     </div>
 
 </section>
 
 
-<!-- PARTIPROGRAM -->
+<!-- PROGRAM -->
 
 <section class="program" id="program">
 
@@ -811,14 +699,7 @@
                 <span>PROGRAM</span>
             </h2>
 
-            <p>
-                Dansk Styrke arbejder for et Danmark med
-                tydelige regler, stærkt fællesskab og fokus
-                på tryghed.
-            </p>
-
         </div>
-
 
         <div class="program-list">
 
@@ -849,26 +730,7 @@
 
             <div class="program-row">
                 <div class="program-number">06</div>
-                <p>
-                    Arbejde for udvisning ved alvorlig kriminalitet,
-                    når det er muligt efter dansk lovgivning.
-                </p>
-            </div>
-
-            <div class="program-row">
-                <div class="program-number">07</div>
-                <p>
-                    Stille krav om respekt for dansk lov og samfundets
-                    grundlæggende regler.
-                </p>
-            </div>
-
-            <div class="program-row">
-                <div class="program-number">08</div>
-                <p>
-                    Sætte borgernes tryghed og sikkerhed højt
-                    på den politiske dagsorden.
-                </p>
+                <p>Styrke fokus på borgernes tryghed og sikkerhed.</p>
             </div>
 
         </div>
@@ -891,32 +753,24 @@
                 <span>HADERSLEV.</span>
             </h2>
 
-            <p class="local-description">
+            <p>
                 Vores lokale mærkesag er at gøre Haderslev
                 til et tryggere sted at bo, gå i skole og færdes.
             </p>
 
-
-            <ul class="local-list">
+            <ul>
 
                 <li>Mere synligt politi i Haderslev.</li>
-
                 <li>Større fokus på kriminalitet og hærværk.</li>
-
                 <li>Tryggere områder omkring skoler.</li>
-
                 <li>Bedre belysning på utrygge steder.</li>
-
                 <li>Forebyggelse af kriminalitet blandt unge.</li>
-
-                <li>Hurtigere reaktion på gentagen kriminalitet.</li>
 
             </ul>
 
         </div>
 
-
-        <div class="local-image">
+        <div class="image-section">
             HADERSLEV-BILLEDE
         </div>
 
@@ -925,7 +779,7 @@
 </section>
 
 
-<!-- MÅL -->
+<!-- GOALS -->
 
 <section class="goals">
 
@@ -959,7 +813,6 @@
     </div>
 
 </footer>
-```
 
 </body>
 </html>
