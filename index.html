@@ -11,623 +11,563 @@
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
 <style>
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
-html {
-    scroll-behavior: smooth;
+html{
+    scroll-behavior:smooth;
 }
 
-body {
-    font-family: 'Montserrat', sans-serif;
-    background: #080808;
-    color: white;
+body{
+    font-family:'Montserrat',sans-serif;
+    background:#080808;
+    color:white;
 }
-
 
 /* =========================
    FORSIDE
 ========================= */
 
-#landing {
-    height: 100vh;
-    min-height: 650px;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    text-align: center;
+#landing{
+    height:100vh;
+    min-height:650px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
 
     background:
         linear-gradient(
             rgba(0,0,0,.45),
-            rgba(0,0,0,.85)
+            rgba(0,0,0,.88)
         ),
-        url("https://upload.wikimedia.org/wikipedia/commons/4/4a/Christiansborg_hjem_for_Folketinget%2C_i_K%C3%B8benhavn._750A4595_%2850304281723%29.jpg");
+        url("https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Christiansborg_hjem_for_Folketinget%2C_i_K%C3%B8benhavn._750A4595_%2850304281723%29.jpg/1280px-Christiansborg_hjem_for_Folketinget%2C_i_K%C3%B8benhavn._750A4595_%2850304281723%29.jpg");
 
-    background-size: cover;
-    background-position: center;
+    background-size:cover;
+    background-position:center;
 }
 
-.landing-content {
-    max-width: 1000px;
-    padding: 30px;
+.landing-content{
+    max-width:1000px;
+    padding:30px;
 }
 
-.landing-content h1 {
-    font-size: clamp(55px, 10vw, 130px);
-    font-weight: 900;
-    letter-spacing: -6px;
-    line-height: .88;
+.landing-content h1{
+    font-size:clamp(55px,10vw,130px);
+    font-weight:900;
+    letter-spacing:-6px;
+    line-height:.88;
 }
 
-.landing-content p {
-    margin-top: 30px;
-
-    font-size: 16px;
-    letter-spacing: 4px;
-
-    text-transform: uppercase;
-
-    color: #d0d0d0;
+.landing-content p{
+    margin-top:30px;
+    font-size:16px;
+    letter-spacing:4px;
+    text-transform:uppercase;
+    color:#d0d0d0;
 }
 
-.enter-button {
-    margin-top: 45px;
-
-    display: inline-block;
-
-    padding: 18px 40px;
-
-    border: 1px solid white;
-
-    color: white;
-    text-decoration: none;
-
-    font-size: 12px;
-    font-weight: 700;
-
-    letter-spacing: 2px;
-
-    transition: .3s;
+.enter-button{
+    margin-top:45px;
+    display:inline-block;
+    padding:18px 40px;
+    border:1px solid white;
+    color:white;
+    text-decoration:none;
+    font-size:12px;
+    font-weight:700;
+    letter-spacing:2px;
+    transition:.3s;
 }
 
-.enter-button:hover {
-    background: white;
-    color: black;
+.enter-button:hover{
+    background:white;
+    color:black;
 }
-
 
 /* =========================
    HJEMMESIDE
 ========================= */
 
-#site {
-    display: none;
+#site{
+    display:none;
 }
 
-header {
-    height: 85px;
-
-    padding: 0 5%;
-
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    position: sticky;
-    top: 0;
-
-    z-index: 100;
-
-    background: rgba(8,8,8,.92);
-
-    backdrop-filter: blur(15px);
-
-    border-bottom: 1px solid #222;
+header{
+    height:85px;
+    padding:0 5%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    position:sticky;
+    top:0;
+    z-index:100;
+    background:rgba(8,8,8,.92);
+    backdrop-filter:blur(15px);
+    border-bottom:1px solid #222;
 }
 
-.logo {
-    font-size: 20px;
-    font-weight: 900;
-    letter-spacing: 2px;
+.logo{
+    font-size:20px;
+    font-weight:900;
+    letter-spacing:2px;
 }
 
-.menu-button {
-    cursor: pointer;
-
-    font-size: 12px;
-    font-weight: 700;
-
-    letter-spacing: 3px;
+.menu-button{
+    cursor:pointer;
+    font-size:12px;
+    font-weight:700;
+    letter-spacing:3px;
 }
-
 
 /* =========================
    HERO
 ========================= */
 
-.hero {
-
-    min-height: 75vh;
-
-    display: flex;
-    align-items: flex-end;
-
-    padding: 7%;
+.hero{
+    min-height:75vh;
+    display:flex;
+    align-items:flex-end;
+    padding:7%;
 
     background:
         linear-gradient(
             transparent,
             rgba(0,0,0,.95)
         ),
-        url("https://upload.wikimedia.org/wikipedia/commons/4/4a/Christiansborg_hjem_for_Folketinget%2C_i_K%C3%B8benhavn._750A4595_%2850304281723%29.jpg");
+        url("https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Christiansborg_hjem_for_Folketinget%2C_i_K%C3%B8benhavn._750A4595_%2850304281723%29.jpg/1280px-Christiansborg_hjem_for_Folketinget%2C_i_K%C3%B8benhavn._750A4595_%2850304281723%29.jpg");
 
-    background-size: cover;
-    background-position: center;
+    background-size:cover;
+    background-position:center;
 }
 
-.hero h2 {
-
-    font-size: clamp(45px, 7vw, 95px);
-
-    line-height: .93;
-
-    font-weight: 900;
-
-    max-width: 1050px;
-
-    letter-spacing: -4px;
+.hero h2{
+    font-size:clamp(45px,7vw,95px);
+    line-height:.93;
+    font-weight:900;
+    max-width:1050px;
+    letter-spacing:-4px;
 }
 
-.hero span {
-    color: #aaa;
+.hero span{
+    color:#aaa;
 }
-
 
 /* =========================
    INTRO
 ========================= */
 
-.intro {
-
-    padding: 120px 8%;
-
-    max-width: 1250px;
+.intro{
+    padding:120px 8%;
+    max-width:1250px;
 }
 
-.intro small {
-
-    color: #777;
-
-    letter-spacing: 4px;
-
-    font-weight: 700;
+.intro small{
+    color:#777;
+    letter-spacing:4px;
+    font-weight:700;
 }
 
-.intro h2 {
-
-    margin-top: 20px;
-
-    font-size: clamp(35px, 5vw, 70px);
-
-    line-height: 1;
-
-    font-weight: 800;
+.intro h2{
+    margin-top:20px;
+    font-size:clamp(35px,5vw,70px);
+    line-height:1;
+    font-weight:800;
 }
 
-.intro p {
-
-    margin-top: 35px;
-
-    max-width: 850px;
-
-    color: #aaa;
-
-    font-size: 18px;
-
-    line-height: 1.8;
+.intro p{
+    margin-top:35px;
+    max-width:850px;
+    color:#aaa;
+    font-size:18px;
+    line-height:1.8;
 }
-
 
 /* =========================
    KATEGORIER
 ========================= */
 
-.categories {
-
-    padding: 0 5% 120px;
+.categories{
+    padding:0 5% 120px;
 }
 
-.category-grid {
-
-    display: grid;
-
-    grid-template-columns: repeat(2, 1fr);
-
-    gap: 20px;
+.category-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:20px;
 }
 
-.card {
-
-    height: 430px;
-
-    position: relative;
-
-    overflow: hidden;
-
-    cursor: pointer;
-
-    background: #111;
+.card{
+    height:430px;
+    position:relative;
+    overflow:hidden;
+    cursor:pointer;
+    background:#111;
 }
 
-.card img {
-
-    width: 100%;
-    height: 100%;
-
-    object-fit: cover;
-
-    transition: .7s;
-
-    filter: brightness(.58);
+.card img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:.7s;
+    filter:brightness(.58);
 }
 
-.card:hover img {
-
-    transform: scale(1.06);
-
-    filter: brightness(.42);
+.card:hover img{
+    transform:scale(1.06);
+    filter:brightness(.42);
 }
 
-.card-content {
-
-    position: absolute;
-
-    left: 35px;
-    bottom: 30px;
+.card-content{
+    position:absolute;
+    left:35px;
+    bottom:30px;
 }
 
-.card-number {
-
-    font-size: 11px;
-
-    color: #aaa;
-
-    letter-spacing: 3px;
+.card-number{
+    font-size:11px;
+    color:#aaa;
+    letter-spacing:3px;
 }
 
-.card h3 {
-
-    margin-top: 8px;
-
-    font-size: 34px;
-
-    font-weight: 800;
-
-    letter-spacing: -1px;
+.card h3{
+    margin-top:8px;
+    font-size:34px;
+    font-weight:800;
+    letter-spacing:-1px;
 }
 
+/* =========================
+   BILLEDEGALLERI
+========================= */
+
+.gallery{
+    padding:110px 5%;
+    background:#080808;
+}
+
+.gallery-header{
+    margin-bottom:50px;
+}
+
+.gallery-label{
+    color:#777;
+    letter-spacing:4px;
+    font-size:11px;
+    font-weight:700;
+}
+
+.gallery-title{
+    margin-top:15px;
+    font-size:clamp(40px,6vw,80px);
+    font-weight:900;
+    letter-spacing:-3px;
+}
+
+.gallery-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:15px;
+}
+
+.gallery-item{
+    position:relative;
+    height:300px;
+    overflow:hidden;
+    background:#111;
+}
+
+.gallery-item.large{
+    grid-column:span 2;
+}
+
+.gallery-item img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+    transition:.6s;
+    filter:brightness(.72);
+}
+
+.gallery-item:hover img{
+    transform:scale(1.07);
+    filter:brightness(.5);
+}
+
+.gallery-caption{
+    position:absolute;
+    left:20px;
+    bottom:18px;
+    font-size:13px;
+    font-weight:700;
+    letter-spacing:1px;
+    text-shadow:0 2px 8px #000;
+}
 
 /* =========================
    POPUP
 ========================= */
 
-.overlay {
-
-    position: fixed;
-
-    inset: 0;
-
-    background: rgba(0,0,0,.82);
-
-    display: none;
-
-    align-items: center;
-
-    justify-content: center;
-
-    z-index: 500;
-
-    padding: 25px;
-
-    backdrop-filter: blur(8px);
+.overlay{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.82);
+    display:none;
+    align-items:center;
+    justify-content:center;
+    z-index:500;
+    padding:25px;
+    backdrop-filter:blur(8px);
 }
 
-.popup {
-
-    width: 100%;
-
-    max-width: 820px;
-
-    max-height: 85vh;
-
-    overflow-y: auto;
-
-    background: #f4f4f4;
-
-    color: #111;
-
-    padding: 55px;
+.popup{
+    width:100%;
+    max-width:820px;
+    max-height:85vh;
+    overflow-y:auto;
+    background:#f4f4f4;
+    color:#111;
+    padding:55px;
+    position:relative;
 }
 
-.close {
-
-    position: absolute;
-
-    top: 20px;
-    right: 25px;
-
-    font-size: 30px;
-
-    cursor: pointer;
+.close{
+    position:absolute;
+    top:20px;
+    right:25px;
+    font-size:30px;
+    cursor:pointer;
 }
 
-.popup-label {
-
-    font-size: 10px;
-
-    letter-spacing: 4px;
-
-    font-weight: 700;
-
-    color: #777;
+.popup-label{
+    font-size:10px;
+    letter-spacing:4px;
+    font-weight:700;
+    color:#777;
 }
 
-.popup h2 {
-
-    margin-top: 12px;
-
-    font-size: 48px;
-
-    line-height: 1;
+.popup h2{
+    margin-top:12px;
+    font-size:48px;
+    line-height:1;
 }
 
-.popup h3 {
-
-    margin-top: 35px;
-
-    font-size: 20px;
+.popup h3{
+    margin-top:35px;
+    font-size:20px;
 }
 
-.popup p {
-
-    margin-top: 12px;
-
-    line-height: 1.75;
-
-    color: #444;
+.popup p{
+    margin-top:12px;
+    line-height:1.75;
+    color:#444;
 }
 
-.popup ul {
-
-    margin-top: 15px;
-
-    padding-left: 20px;
+.popup ul{
+    margin-top:15px;
+    padding-left:20px;
 }
 
-.popup li {
-
-    margin-bottom: 12px;
-
-    line-height: 1.6;
-
-    color: #444;
+.popup li{
+    margin-bottom:12px;
+    line-height:1.6;
+    color:#444;
 }
-
 
 /* =========================
    PARTIPROGRAM
 ========================= */
 
-.program {
-
-    padding: 110px 8%;
-
-    background: #111;
+.program{
+    padding:110px 8%;
+    background:#111;
 }
 
-.program-title {
-
-    font-size: clamp(40px, 6vw, 80px);
-
-    font-weight: 900;
-
-    line-height: .9;
-
-    margin-bottom: 65px;
+.program-title{
+    font-size:clamp(40px,6vw,80px);
+    font-weight:900;
+    line-height:.9;
+    margin-bottom:65px;
 }
 
-.program-list {
-
-    max-width: 1000px;
+.program-list{
+    max-width:1000px;
 }
 
-.program-item {
-
-    border-top: 1px solid #333;
-
-    padding: 32px 0;
-
-    display: grid;
-
-    grid-template-columns: 80px 1fr;
-
-    gap: 20px;
+.program-item{
+    border-top:1px solid #333;
+    padding:32px 0;
+    display:grid;
+    grid-template-columns:80px 1fr;
+    gap:20px;
 }
 
-.program-number {
-
-    color: #777;
-
-    font-weight: 700;
+.program-number{
+    color:#777;
+    font-weight:700;
 }
 
-.program-item h3 {
-
-    font-size: 22px;
+.program-item h3{
+    font-size:22px;
 }
 
-.program-item p {
-
-    margin-top: 10px;
-
-    color: #999;
-
-    line-height: 1.7;
+.program-item p{
+    margin-top:10px;
+    color:#999;
+    line-height:1.7;
 }
-
 
 /* =========================
    FOOTER
 ========================= */
 
-footer {
-
-    padding: 80px 5%;
-
-    border-top: 1px solid #222;
-
-    color: #777;
+footer{
+    padding:80px 5%;
+    border-top:1px solid #222;
+    color:#777;
 }
 
-footer strong {
-
-    color: white;
+footer strong{
+    color:white;
 }
-
 
 /* =========================
    MENU
 ========================= */
 
-.menu-overlay {
-
-    position: fixed;
-
-    inset: 0;
-
-    background: #080808;
-
-    z-index: 1000;
-
-    display: none;
-
-    padding: 100px 8%;
+.menu-overlay{
+    position:fixed;
+    inset:0;
+    background:#080808;
+    z-index:1000;
+    display:none;
+    padding:100px 8%;
+    overflow-y:auto;
 }
 
-.menu-overlay.active {
-
-    display: block;
+.menu-overlay.active{
+    display:block;
 }
 
-.menu-close {
-
-    position: absolute;
-
-    top: 30px;
-    right: 5%;
-
-    cursor: pointer;
-
-    font-size: 30px;
+.menu-close{
+    position:absolute;
+    top:30px;
+    right:5%;
+    cursor:pointer;
+    font-size:30px;
 }
 
-.menu-links {
-
-    display: flex;
-
-    flex-direction: column;
-
-    gap: 18px;
+.menu-links{
+    display:flex;
+    flex-direction:column;
+    gap:18px;
 }
 
-.menu-links a {
-
-    color: white;
-
-    text-decoration: none;
-
-    font-size: clamp(35px, 6vw, 75px);
-
-    font-weight: 800;
-
-    transition: .2s;
+.menu-links a{
+    color:white;
+    text-decoration:none;
+    font-size:clamp(35px,6vw,75px);
+    font-weight:800;
+    transition:.2s;
 }
 
-.menu-links a:hover {
-
-    color: #777;
+.menu-links a:hover{
+    color:#777;
 }
-
 
 /* =========================
    BILLEDEKREDITERING
 ========================= */
 
-.credits {
-
-    padding: 30px 5%;
-
-    border-top: 1px solid #222;
-
-    color: #555;
-
-    font-size: 11px;
-
-    line-height: 1.7;
+.credits{
+    padding:30px 5%;
+    border-top:1px solid #222;
+    color:#555;
+    font-size:11px;
+    line-height:1.7;
 }
 
-.credits a {
-
-    color: #777;
+.credits a{
+    color:#777;
 }
-
 
 /* =========================
    MOBIL
 ========================= */
 
-@media(max-width:700px) {
+@media(max-width:700px){
 
-    .category-grid {
-
-        grid-template-columns: 1fr;
+    header{
+        height:70px;
     }
 
-    .card {
-
-        height: 330px;
+    .category-grid{
+        grid-template-columns:1fr;
     }
 
-    .popup {
-
-        padding: 40px 25px;
+    .card{
+        height:330px;
     }
 
-    .popup h2 {
-
-        font-size: 36px;
+    .card h3{
+        font-size:27px;
     }
 
-    .program-item {
-
-        grid-template-columns: 45px 1fr;
+    .hero{
+        min-height:65vh;
+        padding:8%;
     }
 
+    .intro{
+        padding:80px 7%;
+    }
+
+    .intro p{
+        font-size:16px;
+    }
+
+    .popup{
+        padding:45px 25px;
+    }
+
+    .popup h2{
+        font-size:36px;
+    }
+
+    .program{
+        padding:80px 7%;
+    }
+
+    .program-item{
+        grid-template-columns:45px 1fr;
+    }
+
+    .gallery{
+        padding:80px 5%;
+    }
+
+    .gallery-grid{
+        grid-template-columns:1fr;
+    }
+
+    .gallery-item,
+    .gallery-item.large{
+        grid-column:span 1;
+        height:280px;
+    }
+
+    .gallery-title{
+        font-size:48px;
+    }
 }
-
 </style>
 </head>
 
-
 <body>
-
 
 <!-- =========================
      FORSIDE
@@ -649,7 +589,7 @@ footer strong {
         <a
             href="#"
             class="enter-button"
-            onclick="enterSite()"
+            onclick="enterSite(); return false;"
         >
             GÅ TIL HJEMMESIDEN →
         </a>
@@ -659,13 +599,11 @@ footer strong {
 </section>
 
 
-
 <!-- =========================
      HJEMMESIDE
 ========================= -->
 
 <div id="site">
-
 
 <header>
 
@@ -683,22 +621,18 @@ footer strong {
 </header>
 
 
-
 <!-- HERO -->
 
 <section class="hero">
 
     <h2>
-
         ET DANMARK MED
         <span>
             STYRKE, TRYGHED OG ANSVAR.
         </span>
-
     </h2>
 
 </section>
-
 
 
 <!-- INTRO -->
@@ -710,14 +644,11 @@ footer strong {
     </small>
 
     <h2>
-
         Danmark, fællesskab,
         tryghed og ansvar.
-
     </h2>
 
     <p>
-
         Dansk Styrke er et politisk projekt med fokus på
         dansk kultur, tryghed, ansvar, integration,
         kriminalitet og udlændingepolitik.
@@ -734,11 +665,9 @@ footer strong {
         Vi lægger vægt på respekt for dansk lovgivning,
         demokratiske spilleregler og et samfund, hvor
         borgerne kan føle sig trygge.
-
     </p>
 
 </section>
-
 
 
 <!-- =========================
@@ -752,223 +681,228 @@ footer strong {
 
 <!-- KULTUR -->
 
-<div
-    class="card"
-    onclick="showInfo('kultur')"
->
+<div class="card" onclick="showInfo('kultur')">
 
 <img
 src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Haderslev_Domkirke%2C_2021.jpg/1280px-Haderslev_Domkirke%2C_2021.jpg"
+alt="Haderslev Domkirke"
 >
 
 <div class="card-content">
-
-<div class="card-number">
-01
-</div>
-
-<h3>
-DANSK KULTUR
-</h3>
-
+<div class="card-number">01</div>
+<h3>DANSK KULTUR</h3>
 </div>
 
 </div>
-
 
 
 <!-- TRYGHED -->
 
-<div
-    class="card"
-    onclick="showInfo('tryghed')"
->
+<div class="card" onclick="showInfo('tryghed')">
 
 <img
 src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Christiansborg_hjem_for_Folketinget%2C_i_K%C3%B8benhavn._750A4595_%2850304281723%29.jpg/1280px-Christiansborg_hjem_for_Folketinget%2C_i_K%C3%B8benhavn._750A4595_%2850304281723%29.jpg"
+alt="Christiansborg"
 >
 
 <div class="card-content">
-
-<div class="card-number">
-02
-</div>
-
-<h3>
-TRYGHED
-</h3>
-
+<div class="card-number">02</div>
+<h3>TRYGHED</h3>
 </div>
 
 </div>
-
 
 
 <!-- ANSVAR -->
 
-<div
-    class="card"
-    onclick="showInfo('ansvar')"
->
+<div class="card" onclick="showInfo('ansvar')">
 
 <img
 src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Folketingssalen_2018a.jpg/1280px-Folketingssalen_2018a.jpg"
+alt="Folketingssalen"
 >
 
 <div class="card-content">
-
-<div class="card-number">
-03
-</div>
-
-<h3>
-ANSVAR
-</h3>
-
+<div class="card-number">03</div>
+<h3>ANSVAR</h3>
 </div>
 
 </div>
-
 
 
 <!-- INTEGRATION -->
 
-<div
-    class="card"
-    onclick="showInfo('integration')"
->
+<div class="card" onclick="showInfo('integration')">
 
 <img
 src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Haderslev_Domkirke_fra_Dam.jpg/1280px-Haderslev_Domkirke_fra_Dam.jpg"
+alt="Haderslev Domkirke fra Dam"
 >
 
 <div class="card-content">
-
-<div class="card-number">
-04
-</div>
-
-<h3>
-INTEGRATION
-</h3>
-
+<div class="card-number">04</div>
+<h3>INTEGRATION</h3>
 </div>
 
 </div>
-
 
 
 <!-- UDLÆNDINGEPOLITIK -->
 
-<div
-    class="card"
-    onclick="showInfo('udlaendinge')"
->
+<div class="card" onclick="showInfo('udlaendinge')">
 
 <img
 src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Christiansborg_hjem_for_Folketinget%2C_i_K%C3%B8benhavn._750A4595_%2850304281723%29.jpg/1280px-Christiansborg_hjem_for_Folketinget%2C_i_K%C3%B8benhavn._750A4595_%2850304281723%29.jpg"
+alt="Christiansborg"
 >
 
 <div class="card-content">
-
-<div class="card-number">
-05
-</div>
-
-<h3>
-UDLÆNDINGEPOLITIK
-</h3>
-
+<div class="card-number">05</div>
+<h3>UDLÆNDINGEPOLITIK</h3>
 </div>
 
 </div>
-
 
 
 <!-- HADERSLEV -->
 
-<div
-    class="card"
-    onclick="showInfo('haderslev')"
->
+<div class="card" onclick="showInfo('haderslev')">
 
 <img
-src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Haderslev_Domkirke%2C_2021.jpg/1280px-Haderslev_Domkirke%2C_2021.jpg"
+src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Haderslev_Havn_01.jpg"
+alt="Haderslev Havn"
 >
 
 <div class="card-content">
-
-<div class="card-number">
-06
-</div>
-
-<h3>
-HADERSLEV
-</h3>
-
+<div class="card-number">06</div>
+<h3>HADERSLEV</h3>
 </div>
 
 </div>
-
 
 
 <!-- OM OS -->
 
-<div
-    class="card"
-    onclick="showInfo('om')"
->
+<div class="card" onclick="showInfo('om')">
 
 <img
-src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Folketingssalen_2018a.jpg/1280px-Folketingssalen_2018a.jpg"
+src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Haderslev_R%C3%A5dhus_2022a.jpg"
+alt="Haderslev Rådhus"
 >
 
 <div class="card-content">
-
-<div class="card-number">
-07
-</div>
-
-<h3>
-OM OS
-</h3>
-
+<div class="card-number">07</div>
+<h3>OM OS</h3>
 </div>
 
 </div>
-
 
 
 <!-- PARTIPROGRAM -->
 
-<div
-    class="card"
-    onclick="showInfo('program')"
->
+<div class="card" onclick="showInfo('program')">
 
 <img
-src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Christiansborg_hjem_for_Folketinget%2C_i_K%C3%B8benhavn._750A4595_%2850304281723%29.jpg/1280px-Christiansborg_hjem_for_Folketinget%2C_i_K%C3%B8benhavn._750A4595_%2850304281723%29.jpg"
+src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Torvet,_Haderslev_02.jpg"
+alt="Torvet i Haderslev"
 >
 
 <div class="card-content">
-
-<div class="card-number">
-08
-</div>
-
-<h3>
-PARTIPROGRAM
-</h3>
-
+<div class="card-number">08</div>
+<h3>PARTIPROGRAM</h3>
 </div>
 
 </div>
 
 
 </div>
-
 </section>
 
+
+<!-- =========================
+     BILLEDEGALLERI
+========================= -->
+
+<section class="gallery">
+
+    <div class="gallery-header">
+
+        <div class="gallery-label">
+            BILLEDER
+        </div>
+
+        <div class="gallery-title">
+            HADERSLEV &amp;<br>
+            DANMARK
+        </div>
+
+    </div>
+
+    <div class="gallery-grid">
+
+        <div class="gallery-item large">
+            <img
+                src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Haderslev_Havn_01.jpg"
+                alt="Haderslev Havn"
+            >
+            <div class="gallery-caption">
+                HADERSLEV HAVN
+            </div>
+        </div>
+
+        <div class="gallery-item">
+            <img
+                src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Torvet,_Haderslev_02.jpg"
+                alt="Torvet i Haderslev"
+            >
+            <div class="gallery-caption">
+                TORVET
+            </div>
+        </div>
+
+        <div class="gallery-item">
+            <img
+                src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Haderslev_R%C3%A5dhus_2022a.jpg"
+                alt="Haderslev Rådhus"
+            >
+            <div class="gallery-caption">
+                HADERSLEV RÅDHUS
+            </div>
+        </div>
+
+        <div class="gallery-item large">
+            <img
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Folketingssalen_2018a.jpg/1280px-Folketingssalen_2018a.jpg"
+                alt="Folketingssalen"
+            >
+            <div class="gallery-caption">
+                FOLKETINGSSALEN
+            </div>
+        </div>
+
+        <div class="gallery-item">
+            <img
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Christiansborg_hjem_for_Folketinget%2C_i_K%C3%B8benhavn._750A4595_%2850304281723%29.jpg/1280px-Christiansborg_hjem_for_Folketinget%2C_i_K%C3%B8benhavn._750A4595_%2850304281723%29.jpg"
+                alt="Christiansborg"
+            >
+            <div class="gallery-caption">
+                CHRISTIANSBORG
+            </div>
+        </div>
+
+        <div class="gallery-item">
+            <img
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Haderslev_Domkirke%2C_2021.jpg/1280px-Haderslev_Domkirke%2C_2021.jpg"
+                alt="Haderslev Domkirke"
+            >
+            <div class="gallery-caption">
+                HADERSLEV DOMKIRKE
+            </div>
+        </div>
+
+    </div>
+
+</section>
 
 
 <!-- =========================
@@ -978,162 +912,114 @@ PARTIPROGRAM
 <section class="program">
 
 <div class="program-title">
-
-VORES<br>
-PROGRAM
-
+    VORES<br>
+    PROGRAM
 </div>
-
 
 <div class="program-list">
 
-
 <div class="program-item">
 
-<div class="program-number">
-01
-</div>
+<div class="program-number">01</div>
 
 <div>
-
-<h3>
-Dansk kultur
-</h3>
+<h3>Dansk kultur</h3>
 
 <p>
 Styrke dansk kultur, historie, sprog og
 danske traditioner og sikre, at de fortsat
 har en tydelig plads i samfundet.
 </p>
-
 </div>
 
 </div>
-
 
 
 <div class="program-item">
 
-<div class="program-number">
-02
-</div>
+<div class="program-number">02</div>
 
 <div>
-
-<h3>
-Tryghed
-</h3>
+<h3>Tryghed</h3>
 
 <p>
 Skabe et tryggere Danmark, hvor borgere
 kan føle sig sikre i deres hverdag og
 lokalområde.
 </p>
-
 </div>
 
 </div>
-
 
 
 <div class="program-item">
 
-<div class="program-number">
-03
-</div>
+<div class="program-number">03</div>
 
 <div>
-
-<h3>
-Kriminalitet
-</h3>
+<h3>Kriminalitet</h3>
 
 <p>
 Bekæmpe kriminalitet og arbejde for
 tydelige konsekvenser ved alvorlige
 lovovertrædelser.
 </p>
-
 </div>
 
 </div>
-
 
 
 <div class="program-item">
 
-<div class="program-number">
-04
-</div>
+<div class="program-number">04</div>
 
 <div>
-
-<h3>
-Integration
-</h3>
+<h3>Integration</h3>
 
 <p>
 Fokusere på deltagelse i samfundet,
 respekt for dansk lovgivning og
 fælles demokratiske regler.
 </p>
-
 </div>
 
 </div>
-
 
 
 <div class="program-item">
 
-<div class="program-number">
-05
-</div>
+<div class="program-number">05</div>
 
 <div>
-
-<h3>
-Udlændingepolitik
-</h3>
+<h3>Udlændingepolitik</h3>
 
 <p>
 Føre en strammere udlændingepolitik
 inden for rammerne af dansk lovgivning
 og med fokus på samfundets sammenhængskraft.
 </p>
-
 </div>
 
 </div>
-
 
 
 <div class="program-item">
 
-<div class="program-number">
-06
-</div>
+<div class="program-number">06</div>
 
 <div>
-
-<h3>
-Lokalsamfund
-</h3>
+<h3>Lokalsamfund</h3>
 
 <p>
 Sætte større fokus på lokale problemer,
 tryghed og sikkerhed i danske kommuner.
 </p>
-
 </div>
 
 </div>
 
-
 </div>
-
 </section>
-
 
 
 <!-- =========================
@@ -1153,12 +1039,12 @@ For et stærkere og tryggere Danmark.
 </footer>
 
 
-
 <!-- KREDITERINGER -->
 
 <div class="credits">
 
 <b>Billedkreditering</b>
+
 <br><br>
 
 Christiansborg / Folketinget:
@@ -1168,15 +1054,13 @@ med behørig kildeangivelse og fotografkreditering.
 
 <br><br>
 
-Haderslev:
-Haderslev Domkirke – fotograf Thomas Dahlstrøm Nielsen,
-Wikimedia Commons, CC BY-SA 4.0.
+Haderslev-billeder:
+Wikimedia Commons. Licens og fotograf fremgår
+af de enkelte billeders Wikimedia Commons-side.
 
 </div>
 
-
 </div>
-
 
 
 <!-- =========================
@@ -1204,7 +1088,6 @@ Wikimedia Commons, CC BY-SA 4.0.
 </div>
 
 
-
 <!-- =========================
      MENU
 ========================= -->
@@ -1221,83 +1104,54 @@ Wikimedia Commons, CC BY-SA 4.0.
 ×
 </div>
 
-
 <div class="menu-links">
 
-<a
-href="#"
-onclick="showInfo('om'); closeMenu();"
->
+<a href="#" onclick="showInfo('om'); closeMenu(); return false;">
 OM OS
 </a>
 
-<a
-href="#"
-onclick="showInfo('kultur'); closeMenu();"
->
+<a href="#" onclick="showInfo('kultur'); closeMenu(); return false;">
 DANSK KULTUR
 </a>
 
-<a
-href="#"
-onclick="showInfo('tryghed'); closeMenu();"
->
+<a href="#" onclick="showInfo('tryghed'); closeMenu(); return false;">
 TRYGHED
 </a>
 
-<a
-href="#"
-onclick="showInfo('ansvar'); closeMenu();"
->
+<a href="#" onclick="showInfo('ansvar'); closeMenu(); return false;">
 ANSVAR
 </a>
 
-<a
-href="#"
-onclick="showInfo('integration'); closeMenu();"
->
+<a href="#" onclick="showInfo('integration'); closeMenu(); return false;">
 INTEGRATION
 </a>
 
-<a
-href="#"
-onclick="showInfo('udlaendinge'); closeMenu();"
->
+<a href="#" onclick="showInfo('udlaendinge'); closeMenu(); return false;">
 UDLÆNDINGEPOLITIK
 </a>
 
-<a
-href="#"
-onclick="showInfo('haderslev'); closeMenu();"
->
+<a href="#" onclick="showInfo('haderslev'); closeMenu(); return false;">
 HADERSLEV
 </a>
 
-<a
-href="#"
-onclick="showInfo('program'); closeMenu();"
->
+<a href="#" onclick="showInfo('program'); closeMenu(); return false;">
 PARTIPROGRAM
 </a>
 
 </div>
-
 </div>
 
 
-
 <script>
-
 
 /* =========================
    ÅBN HJEMMESIDE
 ========================= */
 
-function enterSite() {
+function enterSite(){
 
-    document.getElementById("landing").style.display = "none";
-
-    document.getElementById("site").style.display = "block";
+    document.getElementById("landing").style.display="none";
+    document.getElementById("site").style.display="block";
 
     window.scrollTo(0,0);
 }
@@ -1307,18 +1161,20 @@ function enterSite() {
    MENU
 ========================= */
 
-function openMenu() {
+function openMenu(){
 
     document
         .getElementById("menu")
         .classList.add("active");
+
 }
 
-function closeMenu() {
+function closeMenu(){
 
     document
         .getElementById("menu")
         .classList.remove("active");
+
 }
 
 
@@ -1326,7 +1182,7 @@ function closeMenu() {
    INFORMATION
 ========================= */
 
-function showInfo(type) {
+function showInfo(type){
 
     const content =
         document.getElementById("popupContent");
@@ -1334,21 +1190,17 @@ function showInfo(type) {
 
 /* OM OS */
 
-if(type === "om") {
+if(type==="om"){
 
-content.innerHTML = `
+content.innerHTML=`
 
 <div class="popup-label">
 DANSK STYRKE
 </div>
 
-<h2>
-Om os
-</h2>
+<h2>Om os</h2>
 
-<h3>
-Hvem er Dansk Styrke?
-</h3>
+<h3>Hvem er Dansk Styrke?</h3>
 
 <p>
 Dansk Styrke er et politisk projekt med
@@ -1356,9 +1208,7 @@ fokus på Danmark, dansk kultur, tryghed,
 ansvar og samfundets sammenhængskraft.
 </p>
 
-<h3>
-Vores fokus
-</h3>
+<h3>Vores fokus</h3>
 
 <p>
 Vi ønsker at præsentere vores politiske
@@ -1368,31 +1218,15 @@ områder, så man kan læse mere om de emner,
 vi mener er vigtige.
 </p>
 
-<h3>
-Vores værdier
-</h3>
+<h3>Vores værdier</h3>
 
 <ul>
 
-<li>
-Dansk kultur og traditioner
-</li>
-
-<li>
-Tryghed og sikkerhed
-</li>
-
-<li>
-Ansvar og respekt for loven
-</li>
-
-<li>
-Integration og deltagelse
-</li>
-
-<li>
-Et stærkt lokalsamfund
-</li>
+<li>Dansk kultur og traditioner</li>
+<li>Tryghed og sikkerhed</li>
+<li>Ansvar og respekt for loven</li>
+<li>Integration og deltagelse</li>
+<li>Et stærkt lokalsamfund</li>
 
 </ul>
 
@@ -1403,21 +1237,17 @@ Et stærkt lokalsamfund
 
 /* KULTUR */
 
-if(type === "kultur") {
+if(type==="kultur"){
 
-content.innerHTML = `
+content.innerHTML=`
 
 <div class="popup-label">
 POLITIK
 </div>
 
-<h2>
-Dansk kultur
-</h2>
+<h2>Dansk kultur</h2>
 
-<h3>
-Traditioner
-</h3>
+<h3>Traditioner</h3>
 
 <p>
 Danske traditioner og højtider er en vigtig
@@ -1426,9 +1256,7 @@ og udvikle traditioner, som har betydning
 for mange mennesker i Danmark.
 </p>
 
-<h3>
-Historie
-</h3>
+<h3>Historie</h3>
 
 <p>
 Kendskab til dansk historie kan være med
@@ -1436,9 +1264,7 @@ til at skabe forståelse for, hvordan Danmark
 og det danske samfund er blevet til.
 </p>
 
-<h3>
-Det danske sprog
-</h3>
+<h3>Det danske sprog</h3>
 
 <p>
 Dansk er det fælles sprog i Danmark.
@@ -1446,9 +1272,7 @@ Vi ønsker, at dansk fortsat skal have
 en central plads i samfundet.
 </p>
 
-<h3>
-Fællesskab
-</h3>
+<h3>Fællesskab</h3>
 
 <p>
 Vi ønsker at styrke fællesskabet omkring
@@ -1463,21 +1287,17 @@ at mennesker kan deltage aktivt i samfundet.
 
 /* TRYGHED */
 
-if(type === "tryghed") {
+if(type==="tryghed"){
 
-content.innerHTML = `
+content.innerHTML=`
 
 <div class="popup-label">
 POLITIK
 </div>
 
-<h2>
-Tryghed
-</h2>
+<h2>Tryghed</h2>
 
-<h3>
-Tryghed i hverdagen
-</h3>
+<h3>Tryghed i hverdagen</h3>
 
 <p>
 Vi mener, at mennesker skal kunne færdes
@@ -1485,9 +1305,7 @@ trygt i deres lokalområde, på gaderne,
 ved skoler og i offentlige områder.
 </p>
 
-<h3>
-Politi
-</h3>
+<h3>Politi</h3>
 
 <p>
 Vi ønsker synligt politi i områder, hvor
@@ -1495,9 +1313,7 @@ der opleves problemer med kriminalitet
 eller utryghed.
 </p>
 
-<h3>
-Kriminalitet
-</h3>
+<h3>Kriminalitet</h3>
 
 <p>
 Der skal være en tydelig indsats mod
@@ -1505,9 +1321,7 @@ kriminalitet og konsekvenser ved alvorlige
 lovovertrædelser inden for lovens rammer.
 </p>
 
-<h3>
-Forebyggelse
-</h3>
+<h3>Forebyggelse</h3>
 
 <p>
 Forebyggelse er også vigtig. Unge skal
@@ -1522,21 +1336,17 @@ fritidsaktiviteter og positive fællesskaber.
 
 /* ANSVAR */
 
-if(type === "ansvar") {
+if(type==="ansvar"){
 
-content.innerHTML = `
+content.innerHTML=`
 
 <div class="popup-label">
 POLITIK
 </div>
 
-<h2>
-Ansvar
-</h2>
+<h2>Ansvar</h2>
 
-<h3>
-Personligt ansvar
-</h3>
+<h3>Personligt ansvar</h3>
 
 <p>
 Vi mener, at mennesker har et ansvar
@@ -1544,9 +1354,7 @@ for deres egne handlinger og for det
 fællesskab, de er en del af.
 </p>
 
-<h3>
-Respekt for loven
-</h3>
+<h3>Respekt for loven</h3>
 
 <p>
 Dansk lovgivning skal gælde for alle.
@@ -1555,9 +1363,7 @@ lovovertrædelser skal håndteres inden
 for lovens rammer.
 </p>
 
-<h3>
-Samfundsansvar
-</h3>
+<h3>Samfundsansvar</h3>
 
 <p>
 Et stærkt samfund kræver, at borgere,
@@ -1572,21 +1378,17 @@ for deres del af fællesskabet.
 
 /* INTEGRATION */
 
-if(type === "integration") {
+if(type==="integration"){
 
-content.innerHTML = `
+content.innerHTML=`
 
 <div class="popup-label">
 POLITIK
 </div>
 
-<h2>
-Integration
-</h2>
+<h2>Integration</h2>
 
-<h3>
-Deltagelse
-</h3>
+<h3>Deltagelse</h3>
 
 <p>
 Integration handler blandt andet om
@@ -1594,9 +1396,7 @@ at kunne deltage aktivt i det danske
 samfund og i lokale fællesskaber.
 </p>
 
-<h3>
-Sprog
-</h3>
+<h3>Sprog</h3>
 
 <p>
 Kendskab til dansk kan gøre det lettere
@@ -1604,9 +1404,7 @@ at uddanne sig, arbejde og deltage i
 samfundslivet.
 </p>
 
-<h3>
-Respekt for regler
-</h3>
+<h3>Respekt for regler</h3>
 
 <p>
 Personer, der bor i Danmark, skal
@@ -1614,9 +1412,7 @@ respektere dansk lovgivning og de
 grundlæggende demokratiske regler.
 </p>
 
-<h3>
-Fællesskab
-</h3>
+<h3>Fællesskab</h3>
 
 <p>
 Vi ønsker et samfund, hvor mennesker
@@ -1632,21 +1428,17 @@ respekteres.
 
 /* UDLÆNDINGEPOLITIK */
 
-if(type === "udlaendinge") {
+if(type==="udlaendinge"){
 
-content.innerHTML = `
+content.innerHTML=`
 
 <div class="popup-label">
 POLITIK
 </div>
 
-<h2>
-Udlændingepolitik
-</h2>
+<h2>Udlændingepolitik</h2>
 
-<h3>
-En tydelig politik
-</h3>
+<h3>En tydelig politik</h3>
 
 <p>
 Dansk Styrke ønsker en strammere
@@ -1654,9 +1446,7 @@ udlændingepolitik inden for rammerne
 af dansk lovgivning.
 </p>
 
-<h3>
-Integration
-</h3>
+<h3>Integration</h3>
 
 <p>
 Vi mener, at mennesker, der bor i Danmark,
@@ -1664,9 +1454,7 @@ skal have mulighed for at deltage i samfundet
 og samtidig respektere dansk lovgivning.
 </p>
 
-<h3>
-Kriminalitet
-</h3>
+<h3>Kriminalitet</h3>
 
 <p>
 Alvorlig kriminalitet skal håndteres
@@ -1675,9 +1463,7 @@ I de tilfælde hvor loven giver mulighed
 for udvisning, skal reglerne anvendes.
 </p>
 
-<h3>
-Sammenhængskraft
-</h3>
+<h3>Sammenhængskraft</h3>
 
 <p>
 Vi ønsker at sætte fokus på samfundets
@@ -1692,21 +1478,17 @@ for fælles regler.
 
 /* HADERSLEV */
 
-if(type === "haderslev") {
+if(type==="haderslev"){
 
-content.innerHTML = `
+content.innerHTML=`
 
 <div class="popup-label">
 LOKALPOLITIK
 </div>
 
-<h2>
-Haderslev
-</h2>
+<h2>Haderslev</h2>
 
-<h3>
-Mere synligt politi
-</h3>
+<h3>Mere synligt politi</h3>
 
 <p>
 Vi ønsker større synlighed af politiet
@@ -1714,9 +1496,7 @@ i Haderslev, særligt i områder hvor
 borgere oplever utryghed.
 </p>
 
-<h3>
-Kriminalitet og hærværk
-</h3>
+<h3>Kriminalitet og hærværk</h3>
 
 <p>
 Der skal være større fokus på kriminalitet,
@@ -1724,27 +1504,21 @@ hærværk og gentagne problemer i
 lokalområdet.
 </p>
 
-<h3>
-Skoler
-</h3>
+<h3>Skoler</h3>
 
 <p>
 Områder omkring skoler skal være trygge
 for elever, forældre og medarbejdere.
 </p>
 
-<h3>
-Belysning
-</h3>
+<h3>Belysning</h3>
 
 <p>
 Vi ønsker bedre belysning på steder,
 hvor mørke kan skabe utryghed.
 </p>
 
-<h3>
-Unge
-</h3>
+<h3>Unge</h3>
 
 <p>
 Der skal være større fokus på forebyggelse
@@ -1752,9 +1526,7 @@ af kriminalitet blandt unge og på positive
 fællesskaber og fritidsmuligheder.
 </p>
 
-<h3>
-Hurtigere reaktion
-</h3>
+<h3>Hurtigere reaktion</h3>
 
 <p>
 Gentagne problemer bør håndteres hurtigt
@@ -1768,64 +1540,50 @@ og konsekvent inden for lovens rammer.
 
 /* PARTIPROGRAM */
 
-if(type === "program") {
+if(type==="program"){
 
-content.innerHTML = `
+content.innerHTML=`
 
 <div class="popup-label">
 DANSK STYRKE
 </div>
 
-<h2>
-Partiprogram
-</h2>
+<h2>Partiprogram</h2>
 
-<h3>
-01 — Dansk kultur
-</h3>
+<h3>01 — Dansk kultur</h3>
 
 <p>
 Styrke dansk kultur og danske traditioner.
 </p>
 
-<h3>
-02 — Tryghed
-</h3>
+<h3>02 — Tryghed</h3>
 
 <p>
 Skabe et tryggere Danmark.
 </p>
 
-<h3>
-03 — Kriminalitet
-</h3>
+<h3>03 — Kriminalitet</h3>
 
 <p>
 Bekæmpe kriminalitet og skabe tydelige
 konsekvenser ved alvorlig kriminalitet.
 </p>
 
-<h3>
-04 — Udlændingepolitik
-</h3>
+<h3>04 — Udlændingepolitik</h3>
 
 <p>
 Føre en strammere udlændingepolitik
 inden for dansk lovgivning.
 </p>
 
-<h3>
-05 — Integration
-</h3>
+<h3>05 — Integration</h3>
 
 <p>
 Personer, der bor i Danmark, skal respektere
 dansk lov og samfundets grundlæggende regler.
 </p>
 
-<h3>
-06 — Udvisning
-</h3>
+<h3>06 — Udvisning</h3>
 
 <p>
 Personer, der begår alvorlig kriminalitet,
@@ -1833,9 +1591,7 @@ kan blive udvist, når det er muligt efter
 dansk lovgivning.
 </p>
 
-<h3>
-07 — Borgernes tryghed
-</h3>
+<h3>07 — Borgernes tryghed</h3>
 
 <p>
 Danske borgeres tryghed og sikkerhed
@@ -1847,8 +1603,7 @@ politiske dagsorden.
 
 }
 
-
-document.getElementById("overlay").style.display = "flex";
+document.getElementById("overlay").style.display="flex";
 
 }
 
@@ -1857,11 +1612,12 @@ document.getElementById("overlay").style.display = "flex";
    LUK POPUP
 ========================= */
 
-function closeInfo() {
+function closeInfo(){
 
     document
         .getElementById("overlay")
-        .style.display = "none";
+        .style.display="none";
+
 }
 
 
@@ -1869,12 +1625,10 @@ function closeInfo() {
 
 document
 .getElementById("overlay")
-.addEventListener("click", function(e) {
+.addEventListener("click",function(e){
 
-    if(e.target === this) {
-
+    if(e.target===this){
         closeInfo();
-
     }
 
 });
@@ -1882,20 +1636,16 @@ document
 
 /* ESCAPE */
 
-document.addEventListener("keydown", function(e) {
+document.addEventListener("keydown",function(e){
 
-    if(e.key === "Escape") {
-
+    if(e.key==="Escape"){
         closeInfo();
-
         closeMenu();
-
     }
 
 });
 
 </script>
-
 
 </body>
 </html>
